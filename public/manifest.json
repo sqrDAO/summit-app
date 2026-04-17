@@ -1,0 +1,27 @@
+{
+  "name": "Web3 Builders' Summit 2026",
+  "short_name": "LFBUIDL",
+  "description": "Official app for Web3 Builders' Summit — Da Nang, Vietnam, May 24–27, 2026",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0D0D10",
+  "theme_color": "#0D0D10",
+  "categories": ["events", "lifestyle"],
+  "icons": [
+    { "src": "/favicon/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agenda",
+      "url": "/agenda",
+      "description": "View full summit schedule"
+    },
+    {
+      "name": "Debates",
+      "url": "/debates",
+      "description": "Vote Bull or Bear on Lightning Debates"
+    }
+  ]
+}

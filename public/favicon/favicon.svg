@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418 418" fill="none">
+  <rect width="418" height="418" fill="#0D0D10"/>
+  <g transform="translate(0, 89.5)">
+    <!-- Extracted geometric mark from logo - scaled to fit square -->
+    <path d="M219.289 233.261H184.789V116.631H301.419V151.131C256.059 151.131 219.289 187.901 219.289 233.261Z" fill="white"/>
+    <path d="M85.8901 233.261H34.0801V116.631H150.71V168.441C125.4 193.751 111.2 207.951 85.8901 233.261Z" fill="#FFB800"/>
+    <path d="M185.211 116.63H150.711V0H267.341V34.5C221.981 34.5 185.211 71.27 185.211 116.63Z" fill="white"/>
+    <path d="M372.8 116.63H301.42V0H418.05V71.38L372.8 116.63Z" fill="#FFB800"/>
+    <path d="M34.5 116.63H0V0H116.63V34.5C71.27 34.5 34.5 71.27 34.5 116.63Z" fill="white"/>
+  </g>
+</svg>
