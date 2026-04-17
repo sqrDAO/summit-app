@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import PageWrapper from '@/components/layout/PageWrapper';
 import DogEarCard from '@/components/ui/DogEarCard';
@@ -26,16 +25,6 @@ export default function HomePage() {
 
   return (
     <PageWrapper>
-      <div className="-mx-4 -mt-4 mb-4">
-        <Image
-          src="/header.png"
-          alt="Web3 Builders' Summit 2026"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-          priority
-        />
-      </div>
       <UserChip />
 
       {/* Hero */}

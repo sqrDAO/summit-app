@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Anton } from 'next/font/google';
+import Image from 'next/image';
 import './globals.css';
 import BottomNav from '@/components/layout/BottomNav';
 import { AuthProvider } from '@/context/AuthContext';
@@ -53,6 +54,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full bg-black text-white">
         <AuthProvider>
           <LoginModalProvider>
+            <div className="max-w-lg mx-auto">
+              <Image
+                src="/header.png"
+                alt="Web3 Builders' Summit 2026"
+                width={800}
+                height={400}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
             {children}
             <BottomNav />
             <LoginModal />
