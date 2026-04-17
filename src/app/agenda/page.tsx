@@ -25,7 +25,7 @@ export default function AgendaPage() {
       <TopBar title="May 25 Agenda" />
 
       <div className="mb-1">
-        <p className="text-[#A1A1AA] text-sm mb-4">International Convention Palace · Furama Resort, Da Nang</p>
+        <p className="text-[#A1A1AA] text-sm mb-4">Risemount Premier Resort Da Nang</p>
       </div>
 
       {/* Phase tabs */}

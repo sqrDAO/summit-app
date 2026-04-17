@@ -38,7 +38,7 @@ export default function HomePage() {
         </h1>
         <p className="text-[#FFB800] font-semibold tracking-widest text-sm uppercase mb-4">LFBUIDL 2026</p>
         <p className="text-[#A1A1AA] text-sm leading-relaxed">
-          The premier Web3 event in Southeast Asia. 50+ speakers, 350+ builders, 40+ partners gathering at Furama Resort, Da Nang.
+          The premier Web3 event in Southeast Asia. 50+ speakers, 350+ builders, 40+ partners gathering at Risemount Premier Resort, Da Nang.
         </p>
       </div>
 
@@ -68,9 +68,9 @@ export default function HomePage() {
             </svg>
           </div>
           <div>
-            <p className="text-white font-semibold text-sm">Furama Resort Da Nang</p>
-            <p className="text-[#A1A1AA] text-xs mt-0.5">5 Truong Sa, Khue My Ward, Ngu Hanh Son District</p>
-            <p className="text-[#A1A1AA] text-xs">Da Nang, Vietnam · 7km from DAD Airport</p>
+            <p className="text-white font-semibold text-sm">Risemount Premier Resort Da Nang</p>
+            <p className="text-[#A1A1AA] text-xs mt-0.5">120 Nguyen Van Thoai Street, Ngu Hanh Son Ward</p>
+            <p className="text-[#A1A1AA] text-xs">Da Nang, Vietnam · 10-min walk from My Khe Beach</p>
           </div>
         </div>
       </DogEarCard>
