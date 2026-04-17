@@ -95,7 +95,6 @@ export default function HomePage() {
       <div className="grid grid-cols-2 gap-3 mb-6">
         {[
           { href: '/agenda', icon: '📅', label: 'Full Agenda', desc: 'Schedule & sessions' },
-          { href: '/speakers', icon: '🎤', label: 'Speakers', desc: '50+ thought leaders' },
           { href: '/debates', icon: '⚡', label: 'Debates', desc: 'Vote Bull or Bear' },
           { href: '/partners', icon: '🤝', label: 'Partners', desc: 'Co-hosts & sponsors' },
         ].map(({ href, icon, label, desc }) => (

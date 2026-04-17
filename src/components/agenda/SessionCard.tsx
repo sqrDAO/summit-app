@@ -2,11 +2,9 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import DogEarCard from '@/components/ui/DogEarCard';
 import Badge from '@/components/ui/Badge';
-import Avatar from '@/components/ui/Avatar';
 import BookmarkButton from '@/components/session/BookmarkButton';
 import { Session } from '@/types';
 import { formatTime, getSessionTypeLabel } from '@/lib/utils';
-import { getSpeakerById } from '@/data/speakers';
 
 interface SessionCardProps {
   session: Session;
@@ -26,7 +24,6 @@ const typeBadgeVariant: Record<string, 'gold' | 'purple' | 'green' | 'red' | 'gr
 
 export default function SessionCard({ session, compact }: SessionCardProps) {
   const isClickable = session.type !== 'break' && session.type !== 'networking';
-  const speakers = session.speakerIds.slice(0, 3).map((id) => getSpeakerById(id)).filter(Boolean);
 
   const content = (
     <DogEarCard className="p-4" onClick={isClickable ? undefined : undefined}>
@@ -48,18 +45,6 @@ export default function SessionCard({ session, compact }: SessionCardProps) {
             {session.title}
           </p>
 
-          {speakers.length > 0 && (
-            <div className="flex items-center gap-1.5 mt-2">
-              <div className="flex -space-x-2">
-                {speakers.map((sp) => sp && (
-                  <Avatar key={sp.id} name={sp.name} photoUrl={sp.photoUrl} size="sm" className="ring-1 ring-black" />
-                ))}
-              </div>
-              <p className="text-[#A1A1AA] text-xs truncate">
-                {speakers.map((sp) => sp?.name).join(', ')}
-              </p>
-            </div>
-          )}
         </div>
 
         {/* Bookmark */}
