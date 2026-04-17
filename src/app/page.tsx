@@ -7,6 +7,7 @@ import GoldButton from '@/components/ui/GoldButton';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Badge from '@/components/ui/Badge';
 import { useCountdown } from '@/hooks/useCountdown';
+import UserChip from '@/components/auth/UserChip';
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
@@ -24,6 +25,8 @@ export default function HomePage() {
 
   return (
     <PageWrapper>
+      <UserChip />
+
       {/* Hero */}
       <div className="pt-4 pb-6">
         <div className="flex items-center gap-2 mb-3 flex-wrap">

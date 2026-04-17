@@ -3,10 +3,12 @@
 import DogEarCard from '@/components/ui/DogEarCard';
 import Badge from '@/components/ui/Badge';
 import VoteBar from './VoteBar';
-import { DebateSession, Session } from '@/types';
+import { DebateSession, Session, DebateStance } from '@/types';
 import { formatTime } from '@/lib/utils';
 import { useVoteStore } from '@/lib/store';
 import { useHydrated } from '@/hooks/useHydrated';
+import { useAuth } from '@/context/AuthContext';
+import { useLoginModal } from '@/context/LoginModalContext';
 import clsx from 'clsx';
 
 interface DebateCardProps {
@@ -17,11 +19,21 @@ interface DebateCardProps {
 export default function DebateCard({ debate, session }: DebateCardProps) {
   const hydrated = useHydrated();
   const { getVote, castVote, getBullPercent, getTotalVotes } = useVoteStore();
+  const { user } = useAuth();
+  const { openLoginModal } = useLoginModal();
 
   const myVote = hydrated ? getVote(debate.id) : null;
   const bullPercent = hydrated ? getBullPercent(debate.id) : 50;
   const totalVotes = hydrated ? getTotalVotes(debate.id) : 0;
   const hasVoted = myVote !== null;
+
+  function handleVote(stance: DebateStance) {
+    if (!user) {
+      openLoginModal({ type: 'vote', debateId: debate.id, stance });
+      return;
+    }
+    castVote(debate.id, stance);
+  }
 
   return (
     <DogEarCard className="p-5 mb-4">
@@ -55,7 +67,7 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
       {!hasVoted ? (
         <div className="grid grid-cols-2 gap-3">
           <button
-            onClick={() => castVote(debate.id, 'bull')}
+            onClick={() => handleVote('bull')}
             className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
               bg-emerald-500/15 border border-emerald-500/30 text-emerald-400
               hover:bg-emerald-500/25 transition-all duration-200 active:scale-95"
@@ -63,7 +75,7 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
             🐂 I&apos;m Bullish
           </button>
           <button
-            onClick={() => castVote(debate.id, 'bear')}
+            onClick={() => handleVote('bear')}
             className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
               bg-red-500/15 border border-red-500/30 text-red-400
               hover:bg-red-500/25 transition-all duration-200 active:scale-95"

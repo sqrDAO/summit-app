@@ -3,6 +3,8 @@
 import clsx from 'clsx';
 import { useBookmarkStore } from '@/lib/store';
 import { useHydrated } from '@/hooks/useHydrated';
+import { useAuth } from '@/context/AuthContext';
+import { useLoginModal } from '@/context/LoginModalContext';
 
 interface BookmarkButtonProps {
   sessionId: string;
@@ -13,11 +15,18 @@ interface BookmarkButtonProps {
 export default function BookmarkButton({ sessionId, iconOnly, className }: BookmarkButtonProps) {
   const hydrated = useHydrated();
   const { isBookmarked, toggleBookmark } = useBookmarkStore();
+  const { user } = useAuth();
+  const { openLoginModal } = useLoginModal();
+
   const saved = hydrated && isBookmarked(sessionId);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!user) {
+      openLoginModal({ type: 'bookmark', sessionId });
+      return;
+    }
     toggleBookmark(sessionId);
   };
 

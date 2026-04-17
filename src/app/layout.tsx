@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Anton } from 'next/font/google';
 import './globals.css';
 import BottomNav from '@/components/layout/BottomNav';
+import { AuthProvider } from '@/context/AuthContext';
+import { LoginModalProvider } from '@/context/LoginModalContext';
+import LoginModal from '@/components/auth/LoginModal';
 
 const anton = Anton({
   weight: '400',
@@ -48,8 +51,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${anton.variable} h-full`}>
       <body className="min-h-full bg-black text-white">
-        {children}
-        <BottomNav />
+        <AuthProvider>
+          <LoginModalProvider>
+            {children}
+            <BottomNav />
+            <LoginModal />
+          </LoginModalProvider>
+        </AuthProvider>
       </body>
     </html>
   );
