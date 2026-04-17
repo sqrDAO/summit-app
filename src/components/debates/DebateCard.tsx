@@ -26,6 +26,7 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
   const bullPercent = hydrated ? getBullPercent(debate.id) : 50;
   const totalVotes = hydrated ? getTotalVotes(debate.id) : 0;
   const hasVoted = myVote !== null;
+  const votingOpen = new Date() >= new Date('2026-05-25T00:00:00+07:00');
 
   function handleVote(stance: DebateStance) {
     if (!user) {
@@ -64,7 +65,11 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
       </div>
 
       {/* Vote buttons */}
-      {!hasVoted ? (
+      {!votingOpen ? (
+        <div className="text-center py-3 rounded bg-white/5 border border-white/10 text-[#A1A1AA] text-sm">
+          🔒 Voting opens May 25
+        </div>
+      ) : !hasVoted ? (
         <div className="grid grid-cols-2 gap-3">
           <button
             onClick={() => handleVote('bull')}
