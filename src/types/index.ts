@@ -13,7 +13,7 @@ export type SessionType =
 
 export type DebateStance = 'bull' | 'bear';
 
-export type SponsorTier = 'cohost' | 'strategic' | 'ecosystem' | 'community';
+export type SponsorTier = 'cohost' | 'strategic' | 'premium' | 'ecosystem' | 'community';
 
 export interface Speaker {
   id: string;

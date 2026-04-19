@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import PageWrapper from '@/components/layout/PageWrapper';
-import TopBar from '@/components/layout/TopBar';
 import SectionHeader from '@/components/ui/SectionHeader';
 import DogEarCard from '@/components/ui/DogEarCard';
 import { getPartnersByTier } from '@/data/partners';
@@ -43,6 +42,7 @@ function PartnerLogo({ partner, large }: { partner: Partner; large?: boolean }) 
 const tiers: { key: Partner['tier']; label: string; desc: string; cols: string; large?: boolean }[] = [
   { key: 'cohost', label: 'Co-hosts', desc: 'Event organizers', cols: 'grid-cols-2', large: true },
   { key: 'strategic', label: 'Strategic Partners', desc: 'Headline sponsors', cols: 'grid-cols-2', large: true },
+  { key: 'premium', label: 'Premium Partners', desc: 'Premier sponsors', cols: 'grid-cols-2', large: true },
   { key: 'ecosystem', label: 'Ecosystem Partners', desc: 'Blockchain networks & protocols', cols: 'grid-cols-2' },
   { key: 'community', label: 'Community Partners', desc: 'Ecosystem supporters', cols: 'grid-cols-3' },
 ];
@@ -50,11 +50,6 @@ const tiers: { key: Partner['tier']; label: string; desc: string; cols: string; 
 export default function PartnersPage() {
   return (
     <PageWrapper>
-      <TopBar title="Partners" />
-
-      <p className="text-[#A1A1AA] text-sm mb-6">
-        40+ organizations powering the Web3 Builders&apos; Summit 2026
-      </p>
 
       {tiers.map(({ key, label, desc, cols, large }) => {
         const tierPartners = getPartnersByTier(key);
@@ -74,12 +69,14 @@ export default function PartnersPage() {
       })}
 
       <div className="mt-4 pt-4 border-t border-white/10 text-center">
-        <p className="text-[#A1A1AA] text-xs">Interested in partnering?</p>
+        <p className="text-[#A1A1AA] text-xs mb-1">Interested in partnering?</p>
         <a
-          href="mailto:gm@sqrdao.com"
-          className="text-[#FFB800] text-xs font-semibold hover:underline"
+          href="https://docsend.com/view/yv7xnvwfq2cyzdf2"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-1 px-5 py-2.5 bg-[#FFB800] text-black text-xs font-bold rounded hover:bg-[#FFB800]/90 transition-colors"
         >
-          gm@sqrdao.com
+          Become a Partner
         </a>
       </div>
     </PageWrapper>
