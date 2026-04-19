@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Anton } from 'next/font/google';
 import Image from 'next/image';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import BottomNav from '@/components/layout/BottomNav';
 import { AuthProvider } from '@/context/AuthContext';
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <LoginModal />
           </LoginModalProvider>
         </AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
