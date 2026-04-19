@@ -37,7 +37,7 @@ export default function HomePage() {
         </h1>
         <p className="text-[#FFB800] font-semibold tracking-widest text-sm uppercase mb-4">LFBUIDL 2026</p>
         <p className="text-[#A1A1AA] text-sm leading-relaxed">
-          The premier Web3 event in Southeast Asia. 50+ speakers, 350+ builders, 40+ partners gathering at Risemount Premier Resort, Da Nang.
+          The premier Web3 event in Southeast Asia, bringing together Blockchain x AI founders, developers, policymakers and investors to join conversations around shaping the future of decentralized intelligence.
         </p>
       </div>
 
@@ -74,8 +74,55 @@ export default function HomePage() {
         </div>
       </DogEarCard>
 
+      {/* Schedule */}
+      <SectionHeader size="sm">Full Schedule</SectionHeader>
+      <div className="space-y-2 mb-6">
+        {[
+          {
+            date: 'May 24',
+            day: 'Sun',
+            title: 'VIP Dinner',
+            desc: 'Exclusive welcome dinner for speakers & VIP guests',
+            highlight: false,
+          },
+          {
+            date: 'May 25',
+            day: 'Mon',
+            title: "Web3 Builders' Summit",
+            desc: 'Main stage talks, panels, debates + DAVAS Golf',
+            highlight: true,
+          },
+          {
+            date: 'May 26',
+            day: 'Tue',
+            title: 'DAVAS 2026 Opening Session',
+            desc: 'MOU signing, presentations, panels & startup pitching',
+            highlight: false,
+          },
+          {
+            date: 'May 27',
+            day: 'Wed',
+            title: 'DAVAS Pitching Day & Gala',
+            desc: 'Startup pitching, MOU signings & closing gala dinner',
+            highlight: false,
+          },
+        ].map(({ date, day, title, desc, highlight }) => (
+          <DogEarCard key={date} className="p-4 flex items-start gap-4" gold={highlight}>
+            <div className="flex-shrink-0 text-center w-12">
+              <p className={`font-[family-name:var(--font-anton)] text-lg leading-none ${highlight ? 'text-[#FFB800]' : 'text-white'}`}>{date.split(' ')[1]}</p>
+              <p className="text-[#A1A1AA] text-[10px] uppercase tracking-widest">{date.split(' ')[0]}</p>
+              <p className="text-[#A1A1AA] text-[10px]">{day}</p>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className={`font-semibold text-sm ${highlight ? 'text-[#FFB800]' : 'text-white'}`}>{title}</p>
+              <p className="text-[#A1A1AA] text-xs mt-0.5 leading-relaxed">{desc}</p>
+            </div>
+          </DogEarCard>
+        ))}
+      </div>
+
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-2 mb-6">
+      <div className="grid grid-cols-4 gap-2 mb-1">
         {[
           { value: '50+', label: 'Speakers' },
           { value: '350+', label: 'Builders' },
@@ -88,6 +135,7 @@ export default function HomePage() {
           </DogEarCard>
         ))}
       </div>
+      <p className="text-[#A1A1AA] text-[10px] text-center mb-6 uppercase tracking-widest">Based on previous events</p>
 
       {/* Quick links */}
       <SectionHeader size="sm">Explore</SectionHeader>
