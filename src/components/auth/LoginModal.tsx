@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { AuthError } from 'firebase/auth';
 import { useLoginModal } from '@/context/LoginModalContext';
-import { useBookmarkStore } from '@/lib/store';
 import { signInWithGoogle, signInWithEmail, signUpWithEmail, getAuthErrorMessage } from '@/lib/firebaseAuth';
 import clsx from 'clsx';
 
@@ -11,7 +10,6 @@ type Mode = 'signin' | 'signup';
 
 export default function LoginModal() {
   const { isOpen, pendingAction, closeLoginModal } = useLoginModal();
-  const { addBookmark } = useBookmarkStore();
 
   const [mode, setMode] = useState<Mode>('signin');
   const [name, setName] = useState('');
@@ -31,20 +29,11 @@ export default function LoginModal() {
     }
   }, [isOpen]);
 
-  function executePendingAction() {
-    if (!pendingAction) return;
-    if (pendingAction.type === 'bookmark') {
-      addBookmark(pendingAction.sessionId);
-    }
-    // vote is replayed by DebateCard via pendingStanceRef useEffect
-  }
-
   async function handleGoogle() {
     setError('');
     setLoading(true);
     try {
       await signInWithGoogle();
-      executePendingAction();
       closeLoginModal();
     } catch (e) {
       const msg = getAuthErrorMessage(e as AuthError);
@@ -65,7 +54,6 @@ export default function LoginModal() {
         if (!name.trim()) { setError('Please enter your name.'); setLoading(false); return; }
         await signUpWithEmail(name.trim(), email, password);
       }
-      executePendingAction();
       closeLoginModal();
     } catch (e) {
       setError(getAuthErrorMessage(e as AuthError));
@@ -97,9 +85,7 @@ export default function LoginModal() {
                 {mode === 'signin' ? 'Sign In' : 'Create Account'}
               </h2>
               <p className="text-[#A1A1AA] text-sm mt-1">
-                {pendingAction?.type === 'bookmark'
-                  ? 'Sign in to bookmark this session'
-                  : pendingAction?.type === 'vote'
+                {pendingAction?.type === 'vote'
                   ? 'Sign in to cast your vote'
                   : 'Sign in to continue'}
               </p>
