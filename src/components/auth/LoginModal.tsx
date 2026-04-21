@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { AuthError } from 'firebase/auth';
 import { useLoginModal } from '@/context/LoginModalContext';
-import { useBookmarkStore, useVoteStore } from '@/lib/store';
+import { useBookmarkStore } from '@/lib/store';
 import { signInWithGoogle, signInWithEmail, signUpWithEmail, getAuthErrorMessage } from '@/lib/firebaseAuth';
 import clsx from 'clsx';
 
@@ -12,7 +12,6 @@ type Mode = 'signin' | 'signup';
 export default function LoginModal() {
   const { isOpen, pendingAction, closeLoginModal } = useLoginModal();
   const { addBookmark } = useBookmarkStore();
-  const { castVote } = useVoteStore();
 
   const [mode, setMode] = useState<Mode>('signin');
   const [name, setName] = useState('');
@@ -36,9 +35,8 @@ export default function LoginModal() {
     if (!pendingAction) return;
     if (pendingAction.type === 'bookmark') {
       addBookmark(pendingAction.sessionId);
-    } else if (pendingAction.type === 'vote') {
-      castVote(pendingAction.debateId, pendingAction.stance);
     }
+    // vote is replayed by DebateCard via pendingStanceRef useEffect
   }
 
   async function handleGoogle() {

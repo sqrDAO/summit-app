@@ -20,7 +20,7 @@ export default function DebatesPage() {
       })}
 
       <div className="mt-2 pt-4 border-t border-white/10 text-center">
-        <p className="text-[#A1A1AA] text-xs">Votes are stored locally on your device</p>
+        <p className="text-[#A1A1AA] text-xs">Votes are live and shared across all devices</p>
       </div>
     </PageWrapper>
   );
