@@ -26,7 +26,7 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
   const bullPercent = hydrated ? getBullPercent(debate.id) : 50;
   const totalVotes = hydrated ? getTotalVotes(debate.id) : 0;
   const hasVoted = myVote !== null;
-  const votingOpen = new Date() >= new Date('2026-05-25T00:00:00+07:00');
+  const votingOpen = true;
 
   function handleVote(stance: DebateStance) {
     if (!user) {
