@@ -34,7 +34,7 @@ export default function SideEventCard({ event }: Props) {
       className="flex bg-[#0D0D10] border border-white/10 rounded-xl overflow-hidden hover:-translate-y-0.5 transition-transform duration-200 active:scale-[0.99]"
     >
       {/* Square cover image */}
-      <div className="relative w-28 shrink-0 bg-zinc-900 self-stretch">
+      <div className="relative w-28 aspect-square shrink-0 bg-zinc-900">
         <Image
           src={event.coverImage}
           alt={event.title}
