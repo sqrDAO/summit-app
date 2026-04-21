@@ -35,38 +35,4 @@ export const sideEvents: SideEvent[] = [
     attendeeCount: 8,
     hosts: ['Quinten G', 'sqrDAO'],
   },
-  {
-    id: 'lfbuidl-2026',
-    title: "Web3 Builders' Summit: LFBUIDL 2026",
-    date: '2026-05-25',
-    startTime: '08:30',
-    endTime: '21:30',
-    location: 'Da Nang',
-    description:
-      "Web3 Builders' Summit (W3BS) returns to Da Nang, Vietnam — officially launched as the nation's international financial center and a regional hub for decentralized mass adoption. Powered by sqrDAO, this edition focuses on a builder-centric execution series: connecting builders locally and globally to BUIDL from Vietnam.",
-    tags: ['Web3', 'DeFi', 'AI', 'Education', 'Infrastructure'],
-    lumaUrl: 'https://lu.ma/web3-builders-summit-lfbuidl',
-    coverImage:
-      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=400,height=400/event-covers/lw/5a784511-dd6e-4d76-8641-7bf57f858d13.png',
-    status: 'register',
-    attendeeCount: 0,
-    hosts: ['sqrDAO'],
-  },
-  {
-    id: 'davas-2026',
-    title: 'Danang Venture and Angel Summit 2026 (DAVAS 2026)',
-    date: '2026-05-26',
-    startTime: '08:30',
-    endTime: '21:30',
-    location: 'Ariyana Convention Centre, Da Nang',
-    description:
-      "DAVAS 2026 connects domestic and international investors, VCs, angel funds, and startup founders in Da Nang's first international venture summit. Features startup pitching, 1:1 investment matching, MOU signings, and a closing gala dinner. Organized by Da Nang City People's Committee.",
-    tags: ['Education', 'Legal', 'Social', 'Infrastructure'],
-    lumaUrl: 'https://lu.ma/sqrdao-events',
-    coverImage:
-      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=1250,height=357/calendar-cover-images/il/5cc06715-184a-430c-9347-da8778bd2993.png',
-    status: 'register',
-    attendeeCount: 0,
-    hosts: ["Da Nang City People's Committee"],
-  },
 ];
