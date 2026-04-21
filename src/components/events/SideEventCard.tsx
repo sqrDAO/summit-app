@@ -31,46 +31,43 @@ export default function SideEventCard({ event }: Props) {
       href={event.lumaUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="block bg-[#0D0D10] border border-white/10 rounded-xl overflow-hidden hover:-translate-y-0.5 transition-transform duration-200 active:scale-[0.99]"
+      className="flex bg-[#0D0D10] border border-white/10 rounded-xl overflow-hidden hover:-translate-y-0.5 transition-transform duration-200 active:scale-[0.99]"
     >
-      {/* Cover image */}
-      <div className="relative w-full h-36 overflow-hidden bg-zinc-900">
+      {/* Square cover image */}
+      <div className="relative w-24 h-24 shrink-0 bg-zinc-900 self-stretch">
         <Image
           src={event.coverImage}
           alt={event.title}
           fill
-          className="object-contain"
+          className="object-cover"
           unoptimized
         />
       </div>
 
-      <div className="p-4">
-        {/* Date + time row */}
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-[#FFB800] text-xs font-semibold">
+      {/* Details */}
+      <div className="flex-1 min-w-0 p-3 flex flex-col justify-between">
+        <div>
+          <p className="text-[#FFB800] text-[11px] font-semibold mb-1">
             {formatDate(event.date)} · {formatTime(event.startTime)}
             {event.endTime && ` – ${formatTime(event.endTime)}`}
           </p>
+          <p className="text-white font-semibold text-sm leading-snug mb-1.5 line-clamp-2">{event.title}</p>
+          <div className="flex items-center gap-1">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#A1A1AA] shrink-0">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <p className="text-[#A1A1AA] text-[11px] truncate">{event.location}</p>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between mt-2">
+          <div className="flex flex-wrap gap-1">
+            {event.tags.slice(0, 2).map((tag) => (
+              <Badge key={tag} variant="gray">{tag}</Badge>
+            ))}
+          </div>
           <Badge variant={status.variant}>{status.label}</Badge>
-        </div>
-
-        {/* Title */}
-        <p className="text-white font-semibold text-sm leading-snug mb-1.5">{event.title}</p>
-
-        {/* Location */}
-        <div className="flex items-center gap-1.5 mb-3">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#A1A1AA] shrink-0">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          <p className="text-[#A1A1AA] text-xs truncate">{event.location}</p>
-        </div>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-1.5">
-          {event.tags.slice(0, 4).map((tag) => (
-            <Badge key={tag} variant="gray">{tag}</Badge>
-          ))}
         </div>
       </div>
     </a>
