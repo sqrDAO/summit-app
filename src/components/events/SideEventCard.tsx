@@ -39,7 +39,7 @@ export default function SideEventCard({ event }: Props) {
           src={event.coverImage}
           alt={event.title}
           fill
-          className="object-cover object-center"
+          className="object-contain"
           unoptimized
         />
       </div>
