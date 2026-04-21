@@ -101,6 +101,18 @@ export default function LoginModal() {
             </button>
           </div>
 
+          {/* Luma ticket hint */}
+          <div className="flex items-start gap-2.5 bg-[#FFB800]/8 border border-[#FFB800]/20 rounded-lg px-3 py-2.5 mb-4">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            <p className="text-[#FFB800]/90 text-xs leading-relaxed">
+              Use the same email as your Luma account to link your Summit ticket.
+            </p>
+          </div>
+
           {/* Google button */}
           <button
             onClick={handleGoogle}
