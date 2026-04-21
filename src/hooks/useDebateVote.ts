@@ -37,13 +37,17 @@ export function useDebateVote(debateId: string) {
       if (cancelled) return;
       const { doc, onSnapshot } = await import('firebase/firestore');
       if (cancelled) return;
-      unsub = onSnapshot(doc(db, 'debates', debateId), (snap) => {
-        if (snap.exists()) {
-          const d = snap.data() as Counts;
-          setCounts({ bullCount: d.bullCount ?? 0, bearCount: d.bearCount ?? 0 });
-        }
-        setCountsLoading(false);
-      });
+      unsub = onSnapshot(
+        doc(db, 'debates', debateId),
+        (snap) => {
+          if (snap.exists()) {
+            const d = snap.data() as Counts;
+            setCounts({ bullCount: d.bullCount ?? 0, bearCount: d.bearCount ?? 0 });
+          }
+          setCountsLoading(false);
+        },
+        () => setCountsLoading(false), // surface errors by un-blocking the UI
+      );
     })();
 
     return () => { cancelled = true; unsub?.(); };

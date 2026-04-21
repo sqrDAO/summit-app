@@ -81,39 +81,42 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
         </div>
       </div>
 
-      {/* Vote buttons */}
+      {/* Vote section */}
       {!votingOpen ? (
         <div className="text-center py-3 rounded bg-white/5 border border-white/10 text-[#A1A1AA] text-sm">
           🔒 Voting opens May 25
         </div>
       ) : loading ? (
         <div className="h-12 rounded bg-white/5 animate-pulse" />
-      ) : !hasVoted ? (
-        <div className="grid grid-cols-2 gap-3">
-          <button
-            onClick={() => handleVote('bull')}
-            className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
-              bg-emerald-500/15 border border-emerald-500/30 text-emerald-400
-              hover:bg-emerald-500/25 transition-all duration-200 active:scale-95"
-          >
-            🐂 I&apos;m Bullish
-          </button>
-          <button
-            onClick={() => handleVote('bear')}
-            className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
-              bg-red-500/15 border border-red-500/30 text-red-400
-              hover:bg-red-500/25 transition-all duration-200 active:scale-95"
-          >
-            🐻 I&apos;m Bearish
-          </button>
-        </div>
-      ) : (
+      ) : hasVoted ? (
         <div>
           <div className={clsx(
             'text-center py-2 rounded text-sm font-bold mb-2',
             myVote === 'bull' ? 'bg-emerald-500/15 text-emerald-400' : 'bg-red-500/15 text-red-400'
           )}>
             You voted {myVote === 'bull' ? '🐂 Bullish' : '🐻 Bearish'}
+          </div>
+          {totalVotes > 0 && <VoteBar bullPercent={bullPercent} totalVotes={totalVotes} />}
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              onClick={() => handleVote('bull')}
+              className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
+                bg-emerald-500/15 border border-emerald-500/30 text-emerald-400
+                hover:bg-emerald-500/25 transition-all duration-200 active:scale-95"
+            >
+              🐂 I&apos;m Bullish
+            </button>
+            <button
+              onClick={() => handleVote('bear')}
+              className="flex items-center justify-center gap-2 py-3 text-sm font-bold rounded
+                bg-red-500/15 border border-red-500/30 text-red-400
+                hover:bg-red-500/25 transition-all duration-200 active:scale-95"
+            >
+              🐻 I&apos;m Bearish
+            </button>
           </div>
           {totalVotes > 0 && <VoteBar bullPercent={bullPercent} totalVotes={totalVotes} />}
         </div>
