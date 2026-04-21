@@ -38,7 +38,7 @@ export const sessions: Session[] = [
     endTime: '09:30',
     phase: 'morning',
     type: 'keynote',
-    speakerIds: ['le-son-phong', 'le-hoang-phuc'],
+    speakerIds: [],
     tags: ['policy', 'blockchain', 'da-nang', 'government'],
     isFeatured: true,
   },
@@ -51,7 +51,7 @@ export const sessions: Session[] = [
     endTime: '10:10',
     phase: 'morning',
     type: 'panel',
-    speakerIds: ['le-son-phong', 'le-hoang-phuc'],
+    speakerIds: [],
     tags: ['regulation', 'vietnam', 'policy', 'adoption'],
   },
   {
@@ -75,7 +75,7 @@ export const sessions: Session[] = [
     endTime: '11:00',
     phase: 'morning',
     type: 'panel',
-    speakerIds: ['victor-tran', 'jarvis-nguyen'],
+    speakerIds: [],
     tags: ['payments', 'stablecoins', 'defi', 'fintech'],
   },
   {
@@ -100,7 +100,7 @@ export const sessions: Session[] = [
     endTime: '11:55',
     phase: 'morning',
     type: 'panel',
-    speakerIds: ['gideon-greaves', 'christie-lee', 'mary-tran'],
+    speakerIds: [],
     tags: ['rwa', 'tokenization', 'infrastructure', 'defi'],
   },
 
@@ -127,7 +127,7 @@ export const sessions: Session[] = [
     endTime: '14:30',
     phase: 'afternoon',
     type: 'showcase',
-    speakerIds: ['tu-chu', 'johnson-lai', 'tung-le'],
+    speakerIds: [],
     tags: ['ai', 'web3', 'infrastructure', 'demo', 'builders'],
   },
   {
@@ -139,7 +139,7 @@ export const sessions: Session[] = [
     endTime: '15:10',
     phase: 'afternoon',
     type: 'showcase',
-    speakerIds: ['kha-nguyen'],
+    speakerIds: [],
     tags: ['rwa', 'finance', 'demo', 'tokenization', 'builders'],
   },
   {
@@ -176,7 +176,7 @@ export const sessions: Session[] = [
     endTime: '16:20',
     phase: 'afternoon',
     type: 'showcase',
-    speakerIds: ['sasha-mai'],
+    speakerIds: [],
     tags: ['consumer', 'social', 'gaming', 'demo', 'builders'],
   },
   {
