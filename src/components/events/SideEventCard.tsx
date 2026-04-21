@@ -34,12 +34,12 @@ export default function SideEventCard({ event }: Props) {
       className="block bg-[#0D0D10] border border-white/10 rounded-xl overflow-hidden hover:-translate-y-0.5 transition-transform duration-200 active:scale-[0.99]"
     >
       {/* Cover image */}
-      <div className="relative w-full aspect-[2/1] bg-zinc-900">
+      <div className="relative w-full h-36 overflow-hidden bg-zinc-900">
         <Image
           src={event.coverImage}
           alt={event.title}
           fill
-          className="object-cover"
+          className="object-cover object-center"
           unoptimized
         />
       </div>
