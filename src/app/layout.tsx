@@ -7,6 +7,7 @@ import BottomNav from '@/components/layout/BottomNav';
 import { AuthProvider } from '@/context/AuthContext';
 import { LoginModalProvider } from '@/context/LoginModalContext';
 import LoginModal from '@/components/auth/LoginModal';
+import NotificationPrompt from '@/components/notifications/NotificationPrompt';
 
 const anton = Anton({
   weight: '400',
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <BottomNav />
             <LoginModal />
+            <NotificationPrompt />
           </LoginModalProvider>
         </AuthProvider>
         <Analytics />
