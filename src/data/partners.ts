@@ -17,11 +17,19 @@ export const partners: Partner[] = [
   { id: 'aptos', name: 'Aptos', logoUrl: '/images/partners/aptos.png', websiteUrl: 'https://aptoslabs.com', tier: 'ecosystem' },
   { id: 'avalanche', name: 'Avalanche', logoUrl: '/images/partners/avalanche.png', websiteUrl: 'https://avax.network', tier: 'ecosystem' },
   { id: 'laguna-network', name: 'Laguna Network', logoUrl: '/images/partners/laguna.png', websiteUrl: 'https://laguna.network', tier: 'ecosystem' },
+  { id: 'merch3', name: 'Merch3', logoUrl: '/images/partners/merch3.png', websiteUrl: 'https://www.merch3.space', tier: 'ecosystem' },
 
   // Community Partners
   { id: 'team1', name: 'Team1', logoUrl: '/images/partners/team1.png', websiteUrl: 'https://www.team1.network', tier: 'community' },
   { id: 'spores', name: 'Spores Network', logoUrl: '/images/partners/spores.png', websiteUrl: 'https://spores.app', tier: 'community' },
   { id: 'danang-blockchain-hub', name: 'Da Nang Blockchain Hub', logoUrl: '/images/partners/danang-blockchain-hub.svg', websiteUrl: 'https://www.danangblockchainhub.com', tier: 'community' },
+  { id: 'bigcoin', name: 'BigCoin', logoUrl: '/images/partners/bigcoin.png', websiteUrl: 'https://bigcoin.vn', tier: 'community' },
+  { id: 'followin', name: 'Followin', logoUrl: '/images/partners/followin.png', websiteUrl: 'https://followin.io', tier: 'community' },
+  { id: 'hyperbuilder', name: 'HyperBuilder', logoUrl: '/images/partners/hyperbuilder.png', websiteUrl: 'https://www.hyperbuilder.co', tier: 'community' },
+  { id: 'sea-blockchain-week', name: 'SEA Blockchain Week', logoUrl: '/images/partners/sea-blockchain-week.png', websiteUrl: 'https://www.seablockchainweek.org', tier: 'community' },
+  { id: 'taipei-blockchain-week', name: 'Taipei Blockchain Week', logoUrl: '/images/partners/taipei-blockchain-week.png', websiteUrl: 'https://www.taipeiblockchainweek.com', tier: 'community' },
+  { id: 'xomnft', name: 'XomNFT', logoUrl: '/images/partners/xomnft.png', websiteUrl: 'https://x.com/xomnft_', tier: 'community' },
+  { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },
 ];
 
 export function getPartnersByTier(tier: Partner['tier']): Partner[] {
