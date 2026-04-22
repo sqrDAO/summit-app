@@ -35,9 +35,8 @@ export const speakers: Speaker[] = [
     bio: "Long 'Leo' Pham is the Founder of sqrDAO and sqrFUND, a community-driven investment DAO focused on early-stage Web3 projects. He is a prominent connector in Vietnam's blockchain ecosystem and co-host of the Web3 Builders' Summit.",
     photoUrl: '/images/speakers/longleo.jpg',
     socials: {
-      twitter: 'https://x.com/longleopham',
+      twitter: 'https://x.com/sqrdao_intern',
       linkedin: 'https://www.linkedin.com/in/longpham91/',
-      website: 'https://x.com/sqrdao_intern',
     },
     sessionIds: ['closing-keynote'],
     isFeatured: true,
