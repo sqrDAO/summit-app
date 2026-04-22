@@ -2,23 +2,6 @@ import { SideEvent } from '@/types';
 
 export const sideEvents: SideEvent[] = [
   {
-    id: 'alibaba-cloud-sme-ai',
-    title: 'Alibaba Cloud SME AI Growth Day Vietnam 2026',
-    date: '2026-04-23',
-    startTime: '12:30',
-    endTime: '18:00',
-    location: 'Ho Chi Minh City',
-    description:
-      "Vietnam's AI builders are moving fast — but most are still building on the same Western tools with the same limitations. Alibaba Cloud SME AI Growth Day brings together founders, engineers, and operators to hear directly from Qwen and Alibaba Cloud engineers on capabilities, architecture, and how to deploy AI products at scale in Southeast Asia. No sales pitch. No fluff.",
-    tags: ['AI', 'Infrastructure'],
-    lumaUrl: 'https://lu.ma/eypk2ivy',
-    coverImage:
-      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=400,height=400/event-covers/p1/fdcc96cb-022f-4d33-b5ae-a242c3de0143.png',
-    status: 'waitlist',
-    attendeeCount: 614,
-    hosts: ['Johan Nguyen', 'Eugene', 'Laura Nguyen', 'Khanh Dau', 'Minh Tran'],
-  },
-  {
     id: 'hungry-wolves-openclaw',
     title: 'Hungry Wolves: From 0 To Your Own OpenClaw Running',
     date: '2026-04-24',
@@ -34,5 +17,22 @@ export const sideEvents: SideEvent[] = [
     status: 'sold-out',
     attendeeCount: 8,
     hosts: ['Quinten G', 'sqrDAO'],
+  },
+  {
+    id: 'pharos-mainnet-celebration-hcm',
+    title: 'Pharos Mainnet Celebration Party - Ho Chi Minh Edition',
+    date: '2026-05-08',
+    startTime: '18:00',
+    endTime: '20:15',
+    location: 'Ho Chi Minh City',
+    description:
+      "Join us to celebrate Pharos' successful mainnet launch with Vietnam's vibrant blockchain community! Co-hosted with Suci Hub and ecosystem partners including SQR Node, sqrDAO, Grandline, Pharosverser, and more. Whether you're a blockchain professional, KOL, or passionate community member, come connect, learn, and celebrate. Space is limited to ensure quality conversations and meaningful networking.",
+    tags: ['DeFi', 'Infrastructure', 'Social', 'Web3'],
+    lumaUrl: 'https://lu.ma/srfmluu5',
+    coverImage:
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/q2/b48d95d9-df56-40c4-9288-fdf439393d00.png',
+    status: 'register',
+    attendeeCount: 0,
+    hosts: ['Pharos Network', 'SUCI Blockchain Hub'],
   },
 ];
