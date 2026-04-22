@@ -23,7 +23,7 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
   const pendingStanceRef = useRef<DebateStance | null>(null);
 
   const hasVoted = myVote !== null;
-  const votingOpen = false;
+  const votingOpen = true;
 
   async function handleVote(stance: DebateStance) {
     if (!user) {
