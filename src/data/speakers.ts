@@ -8,7 +8,9 @@ export const speakers: Speaker[] = [
     company: 'Superteam Black',
     bio: 'Anh Tran leads Superteam Black, driving builder communities and supporting high-potential Web3 projects across Southeast Asia.',
     photoUrl: '/images/speakers/anhtran.jpg',
-    socials: {},
+    socials: {
+      twitter: 'https://x.com/SaigonButcher',
+    },
     sessionIds: [],
     isFeatured: true,
   },
@@ -35,6 +37,7 @@ export const speakers: Speaker[] = [
     socials: {
       twitter: 'https://x.com/longleopham',
       linkedin: 'https://www.linkedin.com/in/longpham91/',
+      website: 'https://x.com/sqrdao_intern',
     },
     sessionIds: ['closing-keynote'],
     isFeatured: true,
@@ -87,6 +90,7 @@ export const speakers: Speaker[] = [
     bio: 'Hieu Bui is the Founder of Knotwork, a platform connecting Web3 builders and communities to collaborate and grow together.',
     photoUrl: '/images/speakers/hieu.jpeg',
     socials: {
+      twitter: 'https://x.com/0xk2_',
       linkedin: 'https://www.linkedin.com/in/trunghieubui88/',
     },
     sessionIds: [],
