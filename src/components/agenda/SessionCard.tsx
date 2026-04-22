@@ -2,7 +2,6 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import DogEarCard from '@/components/ui/DogEarCard';
 import Badge from '@/components/ui/Badge';
-import BookmarkButton from '@/components/session/BookmarkButton';
 import { Session } from '@/types';
 import { formatTime, getSessionTypeLabel } from '@/lib/utils';
 
@@ -47,12 +46,6 @@ export default function SessionCard({ session, compact }: SessionCardProps) {
 
         </div>
 
-        {/* Bookmark */}
-        {isClickable && (
-          <div className="flex-shrink-0 ml-1">
-            <BookmarkButton sessionId={session.id} iconOnly />
-          </div>
-        )}
       </div>
     </DogEarCard>
   );

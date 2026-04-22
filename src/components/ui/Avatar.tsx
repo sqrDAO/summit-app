@@ -37,7 +37,7 @@ export default function Avatar({ name, photoUrl, size = 'md', className }: Avata
           alt={name}
           width={px}
           height={px}
-          className="object-cover w-full h-full"
+          className="object-cover object-top w-full h-full"
           onError={() => setImgError(true)}
         />
       ) : (

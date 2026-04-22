@@ -4,7 +4,6 @@ import PageWrapper from '@/components/layout/PageWrapper';
 import TopBar from '@/components/layout/TopBar';
 import Badge from '@/components/ui/Badge';
 import Avatar from '@/components/ui/Avatar';
-import BookmarkButton from '@/components/session/BookmarkButton';
 import { sessions, getSessionById } from '@/data/sessions';
 import { getSpeakerById } from '@/data/speakers';
 import { getDebateById } from '@/data/debates';
@@ -102,8 +101,6 @@ export default async function SessionPage({ params }: { params: Promise<{ id: st
         </div>
       )}
 
-      {/* Bookmark */}
-      <BookmarkButton sessionId={session.id} />
     </PageWrapper>
   );
 }

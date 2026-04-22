@@ -7,6 +7,7 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import Badge from '@/components/ui/Badge';
 import { useCountdown } from '@/hooks/useCountdown';
 import UserChip from '@/components/auth/UserChip';
+import VenueMap from '@/components/venue/VenueMap';
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
@@ -58,21 +59,7 @@ export default function HomePage() {
       )}
 
       {/* Venue */}
-      <DogEarCard className="p-4 mb-4">
-        <div className="flex items-start gap-3">
-          <div className="w-8 h-8 bg-[#FFB800]/15 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-          </div>
-          <div>
-            <p className="text-white font-semibold text-sm">Risemount Premier Resort Da Nang</p>
-            <p className="text-[#A1A1AA] text-xs mt-0.5">120 Nguyen Van Thoai Street, Ngu Hanh Son Ward</p>
-            <p className="text-[#A1A1AA] text-xs">Da Nang, Vietnam · 10-min walk from My Khe Beach</p>
-          </div>
-        </div>
-      </DogEarCard>
+      <VenueMap />
 
       {/* Schedule */}
       <SectionHeader size="sm">Full Schedule</SectionHeader>

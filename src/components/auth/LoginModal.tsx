@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { AuthError } from 'firebase/auth';
 import { useLoginModal } from '@/context/LoginModalContext';
-import { useBookmarkStore, useVoteStore } from '@/lib/store';
 import { signInWithGoogle, signInWithEmail, signUpWithEmail, getAuthErrorMessage } from '@/lib/firebaseAuth';
 import clsx from 'clsx';
 
@@ -11,8 +10,6 @@ type Mode = 'signin' | 'signup';
 
 export default function LoginModal() {
   const { isOpen, pendingAction, closeLoginModal } = useLoginModal();
-  const { addBookmark } = useBookmarkStore();
-  const { castVote } = useVoteStore();
 
   const [mode, setMode] = useState<Mode>('signin');
   const [name, setName] = useState('');
@@ -32,21 +29,11 @@ export default function LoginModal() {
     }
   }, [isOpen]);
 
-  function executePendingAction() {
-    if (!pendingAction) return;
-    if (pendingAction.type === 'bookmark') {
-      addBookmark(pendingAction.sessionId);
-    } else if (pendingAction.type === 'vote') {
-      castVote(pendingAction.debateId, pendingAction.stance);
-    }
-  }
-
   async function handleGoogle() {
     setError('');
     setLoading(true);
     try {
       await signInWithGoogle();
-      executePendingAction();
       closeLoginModal();
     } catch (e) {
       const msg = getAuthErrorMessage(e as AuthError);
@@ -67,7 +54,6 @@ export default function LoginModal() {
         if (!name.trim()) { setError('Please enter your name.'); setLoading(false); return; }
         await signUpWithEmail(name.trim(), email, password);
       }
-      executePendingAction();
       closeLoginModal();
     } catch (e) {
       setError(getAuthErrorMessage(e as AuthError));
@@ -99,9 +85,7 @@ export default function LoginModal() {
                 {mode === 'signin' ? 'Sign In' : 'Create Account'}
               </h2>
               <p className="text-[#A1A1AA] text-sm mt-1">
-                {pendingAction?.type === 'bookmark'
-                  ? 'Sign in to bookmark this session'
-                  : pendingAction?.type === 'vote'
+                {pendingAction?.type === 'vote'
                   ? 'Sign in to cast your vote'
                   : 'Sign in to continue'}
               </p>
@@ -115,6 +99,18 @@ export default function LoginModal() {
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
+          </div>
+
+          {/* Luma ticket hint */}
+          <div className="flex items-start gap-2.5 bg-[#FFB800]/8 border border-[#FFB800]/20 rounded-lg px-3 py-2.5 mb-4">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFB800" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            <p className="text-[#FFB800]/90 text-xs leading-relaxed">
+              Use the same email as your Luma account to link your Summit ticket.
+            </p>
           </div>
 
           {/* Google button */}

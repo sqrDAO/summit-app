@@ -3,9 +3,7 @@
 import { createContext, useContext, useState, useCallback } from 'react';
 import { DebateStance } from '@/types';
 
-export type PendingAction =
-  | { type: 'bookmark'; sessionId: string }
-  | { type: 'vote'; debateId: string; stance: DebateStance };
+export type PendingAction = { type: 'vote'; debateId: string; stance: DebateStance };
 
 interface LoginModalContextValue {
   isOpen: boolean;

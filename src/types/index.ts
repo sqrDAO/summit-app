@@ -55,6 +55,22 @@ export interface DebateSession {
   bearSummary: string;
 }
 
+export interface SideEvent {
+  id: string;
+  title: string;
+  date: string;
+  startTime: string;
+  endTime?: string;
+  location: string;
+  description: string;
+  tags: string[];
+  lumaUrl: string;
+  coverImage: string;
+  status: 'register' | 'sold-out' | 'waitlist';
+  attendeeCount: number;
+  hosts: string[];
+}
+
 export interface Partner {
   id: string;
   name: string;
