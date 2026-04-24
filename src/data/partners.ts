@@ -29,7 +29,7 @@ export const partners: Partner[] = [
   { id: 'hyperbuilder', name: 'HyperBuilder', logoUrl: '/images/partners/hyperbuilder.png', websiteUrl: 'https://www.hyperbuilder.co', tier: 'community' },
   { id: 'sea-blockchain-week', name: 'SEA Blockchain Week', logoUrl: '/images/partners/sea-blockchain-week.png', websiteUrl: 'https://www.seablockchainweek.org', tier: 'community' },
   { id: 'taipei-blockchain-week', name: 'Taipei Blockchain Week', logoUrl: '/images/partners/taipei-blockchain-week.png', websiteUrl: 'https://www.taipeiblockchainweek.com', tier: 'community' },
-  { id: 'xomnft', name: 'XomNFT', logoUrl: '/images/partners/xomnft.png', websiteUrl: 'https://x.com/xomnft_', tier: 'community' },
+  { id: 'xomnft', name: 'XomNFT', logoUrl: '/images/partners/XomNFT.png', websiteUrl: 'https://x.com/xomnft_', tier: 'community' },
   { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },
   { id: 'cryptopolitan', name: 'Cryptopolitan', logoUrl: '/images/partners/cryptopolitan.png', websiteUrl: 'https://www.cryptopolitan.com', tier: 'community' },
   { id: 'cryptonomads', name: 'CryptoNomads', logoUrl: '/images/partners/cryptonomads.png', websiteUrl: 'https://cryptonomads.org', tier: 'community' },
