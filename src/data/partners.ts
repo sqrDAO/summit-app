@@ -32,6 +32,11 @@ export const partners: Partner[] = [
   { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },
   { id: 'cryptopolitan', name: 'Cryptopolitan', logoUrl: '/images/partners/cryptopolitan.png', websiteUrl: 'https://www.cryptopolitan.com', tier: 'community' },
   { id: 'cryptonomads', name: 'CryptoNomads', logoUrl: '/images/partners/cryptonomads.png', websiteUrl: 'https://cryptonomads.org', tier: 'community' },
+  { id: 'bitcoincom', name: 'Bitcoin.com', logoUrl: '/images/partners/bitcoincom.svg', websiteUrl: 'https://www.bitcoin.com', tier: 'community' },
+  { id: 'blockdev', name: 'BlockDev', logoUrl: '/images/partners/blockdev.png', websiteUrl: 'https://blockdev.id', tier: 'community' },
+  { id: 'dcent', name: "D'CENT", logoUrl: '/images/partners/dcent.png', websiteUrl: 'https://dcentwallet.com', tier: 'community' },
+  { id: 'incrypted', name: 'Incrypted', logoUrl: '/images/partners/incrypted.png', websiteUrl: 'https://incrypted.com', tier: 'community' },
+  { id: 'sotamedia', name: 'SotaMedia', logoUrl: '/images/partners/sotamedia.png', websiteUrl: 'https://sota.media', tier: 'community' },
 ];
 
 export function getPartnersByTier(tier: Partner['tier']): Partner[] {
