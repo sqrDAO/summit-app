@@ -11,6 +11,7 @@ export const partners: Partner[] = [
 
   // Premium Partners
   { id: 'nebulus', name: 'NEBULUS', logoUrl: '/images/partners/nebulus.png', websiteUrl: 'https://nebulus.world', tier: 'premium' },
+  { id: 'pharos', name: 'Pharos', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://pharosnetwork.xyz', tier: 'premium' },
 
   // Ecosystem Partners
   { id: 'swiss-ep', name: 'Swiss EP', logoUrl: '/images/partners/SwissEP.png', websiteUrl: 'https://swissep.org/countries/vietnam', tier: 'ecosystem' },
