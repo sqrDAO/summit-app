@@ -38,6 +38,7 @@ export const partners: Partner[] = [
   { id: 'dcent', name: "D'CENT", logoUrl: '/images/partners/dcent.png', websiteUrl: 'https://dcentwallet.com', tier: 'community' },
   { id: 'incrypted', name: 'Incrypted', logoUrl: '/images/partners/incrypted.png', websiteUrl: 'https://incrypted.com', tier: 'community' },
   { id: 'sotamedia', name: 'SotaMedia', logoUrl: '/images/partners/sotamedia.png', websiteUrl: 'https://sota.media', tier: 'community' },
+  { id: 'conviction', name: 'Conviction', logoUrl: '/images/partners/conviction.png', websiteUrl: 'https://www.conviction.vn', tier: 'community' },
 ];
 
 export function getPartnersByTier(tier: Partner['tier']): Partner[] {
