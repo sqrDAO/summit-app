@@ -8,7 +8,7 @@ import DogEarCard from '@/components/ui/DogEarCard';
 import { getPartnersByTier } from '@/data/partners';
 import { Partner } from '@/types';
 
-function PartnerLogo({ partner, large }: { partner: Partner; large?: boolean }) {
+function PartnerLogo({ partner, cardClass, imgClass }: { partner: Partner; cardClass: string; imgClass: string }) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -19,10 +19,10 @@ function PartnerLogo({ partner, large }: { partner: Partner; large?: boolean }) 
       className="block"
     >
       <DogEarCard
-        className={`flex items-center justify-center hover:-translate-y-1 transition-transform duration-200 ${large ? 'p-6 min-h-[100px]' : 'p-4 min-h-[72px]'}`}
+        className={`flex items-center justify-center hover:-translate-y-1 transition-transform duration-200 ${cardClass}`}
       >
         {!imgError ? (
-          <div className={`relative flex items-center justify-center ${large ? 'h-14 w-full' : 'h-10 w-full'}`}>
+          <div className={`relative flex items-center justify-center ${imgClass}`}>
             <Image
               src={partner.logoUrl}
               alt={partner.name}
@@ -39,19 +39,19 @@ function PartnerLogo({ partner, large }: { partner: Partner; large?: boolean }) 
   );
 }
 
-const tiers: { key: Partner['tier']; label: string; desc: string; cols: string; large?: boolean }[] = [
-  { key: 'cohost', label: 'Co-hosts', desc: 'Event organizers', cols: 'grid-cols-2', large: true },
-  { key: 'strategic', label: 'Strategic Partners', desc: 'Headline sponsors', cols: 'grid-cols-2', large: true },
-  { key: 'premium', label: 'Premium Partners', desc: 'Premier sponsors', cols: 'grid-cols-2', large: true },
-  { key: 'ecosystem', label: 'Ecosystem Partners', desc: 'Blockchain networks & protocols', cols: 'grid-cols-2' },
-  { key: 'community', label: 'Community Partners', desc: 'Ecosystem supporters', cols: 'grid-cols-3' },
+const tiers: { key: Partner['tier']; label: string; desc: string; cols: string; cardClass: string; imgClass: string }[] = [
+  { key: 'cohost',    label: 'Co-hosts',            desc: 'Event organizers',              cols: 'grid-cols-1', cardClass: 'p-8 min-h-[140px]', imgClass: 'h-20 w-full' },
+  { key: 'strategic', label: 'Strategic Partners',  desc: 'Headline sponsors',             cols: 'grid-cols-2', cardClass: 'p-7 min-h-[120px]', imgClass: 'h-16 w-full' },
+  { key: 'premium',   label: 'Premium Partners',    desc: 'Premier sponsors',              cols: 'grid-cols-2', cardClass: 'p-6 min-h-[100px]', imgClass: 'h-14 w-full' },
+  { key: 'ecosystem', label: 'Ecosystem Partners',  desc: 'Blockchain networks & protocols', cols: 'grid-cols-2', cardClass: 'p-4 min-h-[80px]',  imgClass: 'h-12 w-full' },
+  { key: 'community', label: 'Community Partners',  desc: 'Ecosystem supporters',          cols: 'grid-cols-3', cardClass: 'p-3 min-h-[64px]',  imgClass: 'h-9 w-full' },
 ];
 
 export default function PartnersPage() {
   return (
     <PageWrapper>
 
-      {tiers.map(({ key, label, desc, cols, large }) => {
+      {tiers.map(({ key, label, desc, cols, cardClass, imgClass }) => {
         const tierPartners = getPartnersByTier(key);
         if (tierPartners.length === 0) return null;
 
@@ -61,7 +61,7 @@ export default function PartnersPage() {
             <p className="text-[#A1A1AA] text-xs mb-3 -mt-3">{desc}</p>
             <div className={`grid ${cols} gap-3`}>
               {tierPartners.map((partner) => (
-                <PartnerLogo key={partner.id} partner={partner} large={large} />
+                <PartnerLogo key={partner.id} partner={partner} cardClass={cardClass} imgClass={imgClass} />
               ))}
             </div>
           </div>
