@@ -6,7 +6,7 @@ export const speakers: Speaker[] = [
     name: 'Anh Tran',
     title: 'Lead',
     company: 'Superteam Black',
-    bio: 'Anh Tran leads Superteam Black, driving builder communities and supporting high-potential Web3 projects across Southeast Asia.',
+    bio: 'Anh Tran leads Superteam Black, the global tier of the Superteam network supporting Solana founders who have raised pre-seed and seed rounds. Based in Ho Chi Minh City, he previously led Solana Superteam Vietnam and the broader SEA region. Anh is a leading figure in the Vietnamese builder ecosystem and an active mentor for hackathon teams across the region.',
     photoUrl: '/images/speakers/anhtran.jpg',
     socials: {
       twitter: 'https://x.com/SaigonButcher',
@@ -44,9 +44,9 @@ export const speakers: Speaker[] = [
   {
     id: 'trung-nguyen',
     name: 'Trung Nguyen',
-    title: 'Founder & CEO',
+    title: 'Co-founder & CEO',
     company: 'Sky Mavis',
-    bio: 'Trung Nguyen is the Founder and CEO of Sky Mavis, the studio behind Axie Infinity and Ronin — one of the most successful blockchain gaming ecosystems in the world.',
+    bio: "Trung Nguyen is co-founder and CEO of Sky Mavis, the studio behind Axie Infinity and the Ronin chain. A former ICPC World Finalist (2014) and Lozi.vn co-founder, he led Sky Mavis to a $3B valuation in 2021 with backing from Andreessen Horowitz. Trung is one of Vietnam's most recognized Web3 founders and a pioneer of the play-to-earn model.",
     photoUrl: '/images/speakers/trung.jpg',
     socials: {
       twitter: 'https://x.com/trungfinity',
@@ -134,9 +134,9 @@ export const speakers: Speaker[] = [
   {
     id: 'nicole-yap',
     name: 'Nicole Yap',
-    title: 'Contributor',
-    company: '8SIAN Magazine',
-    bio: 'Nicole Yap is a Contributor at 8SIAN Magazine, amplifying Asian voices and stories at the intersection of culture, community, and Web3.',
+    title: 'Founder',
+    company: '8SIAN & 8SIAN Magazine',
+    bio: 'Nicole Yap is the founder of 8SIAN and 8SIAN Magazine, a Web3 lifestyle media platform centered on Asian representation. She entered crypto in 2013 at age 16 and launched 8SIAN in 2021 — 8,888 NFTs that sold out in two weeks and ranked top-10 on OpenSea. Nicole is a leading Asian voice in Web3, with brand collaborations spanning Uniqlo, Royal Selangor, and Vogue Singapore.',
     photoUrl: '/images/speakers/nicole.png',
     socials: {
       twitter: 'https://x.com/8sianmom',
@@ -147,9 +147,9 @@ export const speakers: Speaker[] = [
   {
     id: 'william-wang',
     name: 'William Wang',
-    title: 'Founder',
-    company: 'RNS.id',
-    bio: 'William Wang is the Founder of RNS.id, a decentralized digital identity platform issuing verifiable credentials and residency on-chain.',
+    title: 'CEO',
+    company: 'Cryptic Labs (RNS.ID)',
+    bio: 'William Wang is the CEO of Cryptic Labs (RNS.ID), leading the Palau Digital Residency Program. He advises at Universidade NOVA de Lisboa, Harvard Blockchain Club, and previously at Stanford DTI. William pioneers secure digital identity solutions, driving innovation in the global identity space.',
     photoUrl: '/images/speakers/william.jpeg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/brilwang/',
@@ -161,7 +161,7 @@ export const speakers: Speaker[] = [
     name: 'Chuong Nguyen',
     title: 'Program Manager',
     company: 'Swiss EP Vietnam',
-    bio: 'Chuong Nguyen is a Program Manager at Swiss EP Vietnam, supporting startups and entrepreneurs through capacity-building and ecosystem development programs.',
+    bio: "Nguyen Van Chuong is Program Manager at the Swiss Entrepreneurship Program (Swiss EP) Vietnam and serves on the Executive Board of YBA Da Nang. He bridges international entrepreneurship programs with Vietnam's startup ecosystem, with deep ties to the Da Nang business community.",
     photoUrl: '/images/speakers/chuong.jpeg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/chuongnv/',
