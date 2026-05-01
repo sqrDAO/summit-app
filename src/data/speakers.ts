@@ -121,6 +121,53 @@ export const speakers: Speaker[] = [
     },
     sessionIds: [],
   },
+  {
+    id: 'long-nguyen',
+    name: 'Long Nguyen',
+    title: 'Co-founder',
+    company: 'Speedrun Labs',
+    bio: 'Long Nguyen is the Co-founder of Speedrun Labs, building infrastructure and tooling for the next generation of Web3 developers.',
+    photoUrl: '/images/speakers/long.jpg',
+    socials: {},
+    sessionIds: [],
+  },
+  {
+    id: 'nicole-yap',
+    name: 'Nicole Yap',
+    title: 'Contributor',
+    company: '8SIAN Magazine',
+    bio: 'Nicole Yap is a Contributor at 8SIAN Magazine, amplifying Asian voices and stories at the intersection of culture, community, and Web3.',
+    photoUrl: '/images/speakers/nicole.png',
+    socials: {
+      twitter: 'https://x.com/8sianmom',
+      linkedin: 'https://www.linkedin.com/in/chingchingpodcast/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'william-wang',
+    name: 'William Wang',
+    title: 'Founder',
+    company: 'RNS.id',
+    bio: 'William Wang is the Founder of RNS.id, a decentralized digital identity platform issuing verifiable credentials and residency on-chain.',
+    photoUrl: '/images/speakers/william.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/brilwang/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'chuong-nguyen',
+    name: 'Chuong Nguyen',
+    title: 'Program Manager',
+    company: 'Swiss EP Vietnam',
+    bio: 'Chuong Nguyen is a Program Manager at Swiss EP Vietnam, supporting startups and entrepreneurs through capacity-building and ecosystem development programs.',
+    photoUrl: '/images/speakers/chuong.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/chuongnv/',
+    },
+    sessionIds: [],
+  },
 ];
 
 export function getSpeakerById(id: string): Speaker | undefined {
