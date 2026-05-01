@@ -19,6 +19,8 @@ export const partners: Partner[] = [
   { id: 'avalanche', name: 'Avalanche', logoUrl: '/images/partners/avalanche.png', websiteUrl: 'https://avax.network', tier: 'ecosystem' },
   { id: 'laguna-network', name: 'Laguna Network', logoUrl: '/images/partners/laguna.png', websiteUrl: 'https://laguna.network', tier: 'ecosystem' },
   { id: 'merch3', name: 'Merch3', logoUrl: '/images/partners/merch3.png', websiteUrl: 'https://www.merch3.space', tier: 'ecosystem' },
+  { id: 'dash', name: 'Dash', logoUrl: '/images/partners/dash.png', websiteUrl: 'https://www.dash.org', tier: 'ecosystem' },
+  { id: 'bitget-wallet', name: 'Bitget Wallet', logoUrl: '/images/partners/bitget-wallet.png', websiteUrl: 'https://web3.bitget.com', tier: 'ecosystem' },
 
   // Community Partners
   { id: 'team1', name: 'Team1', logoUrl: '/images/partners/team1.png', websiteUrl: 'https://www.team1.network', tier: 'community' },
