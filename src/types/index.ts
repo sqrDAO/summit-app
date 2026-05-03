@@ -88,6 +88,7 @@ export interface Partner {
   logoUrl: string;
   websiteUrl: string;
   tier: SponsorTier;
+  logoScale?: number;
 }
 
 export interface PanelQuestion {

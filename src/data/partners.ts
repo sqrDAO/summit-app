@@ -2,7 +2,7 @@ import { Partner } from '@/types';
 
 export const partners: Partner[] = [
   // Co-hosts
-  { id: 'sqrdao', name: 'sqrDAO', logoUrl: '/images/partners/sqrdao.png', websiteUrl: 'https://sqrdao.com', tier: 'cohost' },
+  { id: 'sqrdao', name: 'sqrDAO', logoUrl: '/images/partners/sqrdao.png', websiteUrl: 'https://sqrdao.com', tier: 'cohost', logoScale: 0.7 },
   { id: 'davas', name: 'DAVAS', logoUrl: '/images/partners/davas.png', websiteUrl: 'https://davas.vc', tier: 'cohost' },
 
   // Strategic Partners
