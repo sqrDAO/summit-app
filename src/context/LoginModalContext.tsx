@@ -1,9 +1,9 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
-import { ReactionKey } from '@/types';
+import { DebateStance } from '@/types';
 
-export type PendingAction = { type: 'reaction'; sessionId: string; key: ReactionKey };
+export type PendingAction = { type: 'vote'; debateId: string; stance: DebateStance };
 
 interface LoginModalContextValue {
   isOpen: boolean;

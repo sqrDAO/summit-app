@@ -90,6 +90,9 @@ export default async function SessionPage({ params }: { params: Promise<{ id: st
         <div className="bg-[#FFB800]/5 border border-[#FFB800]/20 rounded p-4 mb-6">
           <p className="text-[#FFB800] text-xs font-bold uppercase tracking-wider mb-2">Debate Question</p>
           <p className="text-white text-sm font-medium leading-relaxed">{debate.question}</p>
+          <Link href="/debates" className="inline-block mt-3 text-[#FFB800] text-xs font-semibold hover:underline">
+            Cast your vote →
+          </Link>
         </div>
       )}
 

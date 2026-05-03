@@ -11,6 +11,8 @@ export type SessionType =
   | 'opening'
   | 'dinner';
 
+export type DebateStance = 'bull' | 'bear';
+
 export type PanelReactionKey = 'agree' | 'clarify' | 'challenge';
 export type ShowcaseReactionKey = 'follow' | 'unclear' | 'challenge';
 export type ReactionKey = PanelReactionKey | ShowcaseReactionKey;

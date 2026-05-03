@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useAuth } from '@/context/AuthContext';
 import type { ReactionKey } from '@/types';
 import { app } from '@/lib/firebase';
+import { getClientId } from '@/lib/clientId';
 
 export interface ReactionEvent {
   id: string;
   key: ReactionKey;
-  uid: string;
+  cid: string;
 }
 
 type Counts = Partial<Record<ReactionKey, number>>;
@@ -25,11 +25,15 @@ async function getDb() {
 }
 
 export function useSessionReactions(sessionId: string) {
-  const { user, loading: authLoading } = useAuth();
   const [counts, setCounts] = useState<Counts>({});
   const [recentEvents, setRecentEvents] = useState<ReactionEvent[]>([]);
   const [countsLoading, setCountsLoading] = useState(true);
   const mountTimeRef = useRef<Date>(new Date());
+  const clientIdRef = useRef<string>('');
+
+  if (!clientIdRef.current && typeof window !== 'undefined') {
+    clientIdRef.current = getClientId();
+  }
 
   // Live aggregate counts
   useEffect(() => {
@@ -75,8 +79,8 @@ export function useSessionReactions(sessionId: string) {
         const fresh: ReactionEvent[] = [];
         snap.docChanges().forEach((change) => {
           if (change.type === 'added') {
-            const data = change.doc.data() as { key: ReactionKey; uid: string };
-            fresh.push({ id: change.doc.id, key: data.key, uid: data.uid });
+            const data = change.doc.data() as { key: ReactionKey; cid?: string };
+            fresh.push({ id: change.doc.id, key: data.key, cid: data.cid ?? '' });
           }
         });
         if (fresh.length > 0) {
@@ -89,7 +93,7 @@ export function useSessionReactions(sessionId: string) {
   }, [sessionId]);
 
   const sendReaction = useCallback(async (key: ReactionKey) => {
-    if (!user) return;
+    const cid = clientIdRef.current || getClientId();
     const db = await getDb();
     const { doc, collection, serverTimestamp, increment, writeBatch } = await import('firebase/firestore');
     const reactionsRef = doc(db, 'reactions', sessionId);
@@ -97,14 +101,15 @@ export function useSessionReactions(sessionId: string) {
 
     const batch = writeBatch(db);
     batch.set(reactionsRef, { [key]: increment(1) }, { merge: true });
-    batch.set(eventRef, { key, uid: user.uid, ts: serverTimestamp() });
+    batch.set(eventRef, { key, cid, ts: serverTimestamp() });
     await batch.commit();
-  }, [user, sessionId]);
+  }, [sessionId]);
 
   return {
     counts,
     recentEvents,
     sendReaction,
-    loading: authLoading || countsLoading,
+    clientId: clientIdRef.current,
+    loading: countsLoading,
   };
 }
