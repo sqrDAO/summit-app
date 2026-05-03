@@ -78,3 +78,11 @@ export interface Partner {
   websiteUrl: string;
   tier: SponsorTier;
 }
+
+export interface PanelQuestion {
+  id: string;
+  text: string;
+  createdAt: number;
+  upvoteCount: number;
+  hasUpvoted: boolean;
+}

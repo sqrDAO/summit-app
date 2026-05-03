@@ -64,6 +64,24 @@ export default async function SessionPage({ params }: { params: Promise<{ id: st
         </div>
       )}
 
+      {/* Panel Q&A entry */}
+      {session.type === 'panel' && (
+        <div className="bg-[#FFB800]/5 border border-[#FFB800]/20 rounded p-4 mb-6">
+          <p className="text-[#FFB800] text-xs font-bold uppercase tracking-wider mb-2">
+            Audience Q&amp;A
+          </p>
+          <p className="text-white text-sm leading-relaxed mb-3">
+            Submit a question, query, or challenge for the speakers — anonymously. Top-upvoted questions appear on the LED screen.
+          </p>
+          <Link
+            href={`/sessions/${session.id}/qa`}
+            className="inline-flex w-full items-center justify-center gap-2 px-5 py-3 text-sm font-semibold bg-[#FFB800] text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffc929] [clip-path:polygon(0_0,calc(100%-8px)_0,100%_8px,100%_100%,0_100%)]"
+          >
+            Open Q&amp;A →
+          </Link>
+        </div>
+      )}
+
       {/* Debate question */}
       {debate && (
         <div className="bg-[#FFB800]/5 border border-[#FFB800]/20 rounded p-4 mb-6">
