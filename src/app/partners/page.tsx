@@ -28,6 +28,7 @@ function PartnerLogo({ partner, cardClass, imgClass }: { partner: Partner; cardC
               alt={partner.name}
               fill
               className="object-contain"
+              style={partner.logoScale ? { transform: `scale(${partner.logoScale})` } : undefined}
               onError={() => setImgError(true)}
             />
           </div>
