@@ -36,3 +36,10 @@ body {
 ::-webkit-scrollbar-thumb { background: #FFB800; border-radius: 2px; }
 
 html { scroll-behavior: smooth; }
+
+/* Live emoji reaction floater — rises and fades */
+@keyframes reaction-float {
+  0%   { transform: translate(var(--rx-x, 0px), 0) scale(0.7); opacity: 0; }
+  15%  { transform: translate(var(--rx-x, 0px), -20px) scale(1.1); opacity: 1; }
+  100% { transform: translate(calc(var(--rx-x, 0px) + var(--rx-drift, 0px)), -220px) scale(1); opacity: 0; }
+}

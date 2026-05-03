@@ -11,7 +11,16 @@ export type SessionType =
   | 'opening'
   | 'dinner';
 
-export type DebateStance = 'bull' | 'bear';
+export type PanelReactionKey = 'agree' | 'clarify' | 'challenge';
+export type ShowcaseReactionKey = 'follow' | 'unclear' | 'challenge';
+export type ReactionKey = PanelReactionKey | ShowcaseReactionKey;
+export type ReactionFormat = 'panel' | 'showcase';
+
+export interface ReactionDef {
+  key: ReactionKey;
+  emoji: string;
+  label: string;
+}
 
 export type SponsorTier = 'cohost' | 'strategic' | 'premium' | 'ecosystem' | 'community';
 

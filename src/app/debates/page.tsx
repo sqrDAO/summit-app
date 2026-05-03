@@ -10,7 +10,7 @@ export default function DebatesPage() {
       <TopBar title="Lightning Debates" />
 
       <p className="text-[#A1A1AA] text-sm leading-relaxed mb-6">
-        Three high-stakes debates where the community decides: Bullish or Bearish? Cast your vote and see where builders stand.
+        Three high-stakes debates. React live as builders argue Bullish vs. Bearish — your reactions appear on the venue LED screen.
       </p>
 
       {debates.map((debate) => {
@@ -20,7 +20,7 @@ export default function DebatesPage() {
       })}
 
       <div className="mt-2 pt-4 border-t border-white/10 text-center">
-        <p className="text-[#A1A1AA] text-xs">Votes are live and shared across all devices</p>
+        <p className="text-[#A1A1AA] text-xs">Reactions are live and shared across all devices</p>
       </div>
     </PageWrapper>
   );

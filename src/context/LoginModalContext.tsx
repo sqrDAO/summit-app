@@ -1,14 +1,14 @@
 'use client';
 
 import { createContext, useContext, useState, useCallback } from 'react';
-import { DebateStance } from '@/types';
+import { ReactionKey } from '@/types';
 
-export type PendingAction = { type: 'vote'; debateId: string; stance: DebateStance };
+export type PendingAction = { type: 'reaction'; sessionId: string; key: ReactionKey };
 
 interface LoginModalContextValue {
   isOpen: boolean;
   pendingAction: PendingAction | null;
-  openLoginModal: (action: PendingAction) => void;
+  openLoginModal: (action?: PendingAction) => void;
   closeLoginModal: () => void;
 }
 
@@ -23,8 +23,8 @@ export function LoginModalProvider({ children }: { children: React.ReactNode }) 
   const [isOpen, setIsOpen] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(null);
 
-  const openLoginModal = useCallback((action: PendingAction) => {
-    setPendingAction(action);
+  const openLoginModal = useCallback((action?: PendingAction) => {
+    setPendingAction(action ?? null);
     setIsOpen(true);
   }, []);
 

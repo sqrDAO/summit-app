@@ -85,8 +85,8 @@ export default function LoginModal() {
                 {mode === 'signin' ? 'Sign In' : 'Create Account'}
               </h2>
               <p className="text-[#A1A1AA] text-sm mt-1">
-                {pendingAction?.type === 'vote'
-                  ? 'Sign in to cast your vote'
+                {pendingAction?.type === 'reaction'
+                  ? 'Sign in to react'
                   : 'Sign in to continue'}
               </p>
             </div>
