@@ -35,12 +35,13 @@ export const partners: Partner[] = [
   { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },
   { id: 'cryptopolitan', name: 'Cryptopolitan', logoUrl: '/images/partners/cryptopolitan.png', websiteUrl: 'https://www.cryptopolitan.com', tier: 'community' },
   { id: 'cryptonomads', name: 'CryptoNomads', logoUrl: '/images/partners/cryptonomads.png', websiteUrl: 'https://cryptonomads.org', tier: 'community' },
-  { id: 'bitcoincom', name: 'Bitcoin.com', logoUrl: '/images/partners/bitcoincom.svg', websiteUrl: 'https://www.bitcoin.com', tier: 'community' },
-  { id: 'blockdev', name: 'BlockDev', logoUrl: '/images/partners/blockdev.png', websiteUrl: 'https://blockdev.id', tier: 'community' },
-  { id: 'dcent', name: "D'CENT", logoUrl: '/images/partners/dcent.png', websiteUrl: 'https://dcentwallet.com', tier: 'community' },
+  { id: 'blockdev', name: 'BlockDevID', logoUrl: '/images/partners/blockdev.png', websiteUrl: 'https://blockdev.id', tier: 'community' },
   { id: 'incrypted', name: 'Incrypted', logoUrl: '/images/partners/incrypted.png', websiteUrl: 'https://incrypted.com', tier: 'community' },
   { id: 'sotamedia', name: 'SotaMedia', logoUrl: '/images/partners/sotamedia.png', websiteUrl: 'https://sota.media', tier: 'community' },
+  { id: 'dcent', name: "D'cent Wallet", logoUrl: '/images/partners/dcent.png', websiteUrl: 'https://dcentwallet.com', tier: 'community' },
   { id: 'conviction', name: 'Conviction', logoUrl: '/images/partners/conviction.png', websiteUrl: 'https://www.conviction.vn', tier: 'community' },
+  { id: 'coin68', name: 'Coin68', logoUrl: '/images/partners/Coin68.svg', websiteUrl: 'https://coin68.com', tier: 'community' },
+  { id: 'techflow', name: 'TechFlow', logoUrl: '/images/partners/techflow.png', websiteUrl: 'https://www.techflowpost.com', tier: 'community' },
 ];
 
 export function getPartnersByTier(tier: Partner['tier']): Partner[] {
