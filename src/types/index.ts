@@ -37,6 +37,8 @@ export interface Speaker {
     twitter?: string;
     linkedin?: string;
     website?: string;
+    telegram?: string;
+    facebook?: string;
   };
   sessionIds: string[];
   isFeatured?: boolean;
