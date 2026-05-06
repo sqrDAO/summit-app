@@ -12,7 +12,8 @@ export const partners: Partner[] = [
   // Premium Partners
   { id: 'nebulus', name: 'NEBULUS', logoUrl: '/images/partners/nebulus.png', websiteUrl: 'https://nebulus.world', tier: 'premium' },
   { id: 'pharos', name: 'Pharos Network', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://www.pharos.xyz', tier: 'premium' },
-  { id: 'aquavance', name: 'Aquavance', logoUrl: '/images/partners/aquavance.svg', websiteUrl: 'https://aquavance.agency', tier: 'premium' },
+  { id: 'aquavance', name: 'Aquavance', logoUrl: '/images/partners/aquavance.svg', websiteUrl: 'https://aquavance.com.vn/', tier: 'premium' },
+  { id: 'vici-foundation', name: 'VICI Foundation', logoUrl: '/images/partners/VICI.svg', websiteUrl: 'https://www.facebook.com/vicifoundation/', tier: 'premium' },
   { id: 'risemount', name: 'Risemount', logoUrl: '/images/partners/risemount.svg', websiteUrl: 'https://risemountresortdanang.com', tier: 'premium' },
 
   // Ecosystem Partners
