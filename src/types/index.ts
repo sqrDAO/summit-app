@@ -13,6 +13,17 @@ export type SessionType =
 
 export type DebateStance = 'bull' | 'bear';
 
+export type PanelReactionKey = 'agree' | 'clarify' | 'challenge';
+export type ShowcaseReactionKey = 'follow' | 'unclear' | 'challenge';
+export type ReactionKey = PanelReactionKey | ShowcaseReactionKey;
+export type ReactionFormat = 'panel' | 'showcase';
+
+export interface ReactionDef {
+  key: ReactionKey;
+  emoji: string;
+  label: string;
+}
+
 export type SponsorTier = 'cohost' | 'strategic' | 'premium' | 'ecosystem' | 'community';
 
 export interface Speaker {
@@ -26,6 +37,8 @@ export interface Speaker {
     twitter?: string;
     linkedin?: string;
     website?: string;
+    telegram?: string;
+    facebook?: string;
   };
   sessionIds: string[];
   isFeatured?: boolean;
@@ -78,4 +91,12 @@ export interface Partner {
   websiteUrl: string;
   tier: SponsorTier;
   logoScale?: number;
+}
+
+export interface PanelQuestion {
+  id: string;
+  text: string;
+  createdAt: number;
+  upvoteCount: number;
+  hasUpvoted: boolean;
 }

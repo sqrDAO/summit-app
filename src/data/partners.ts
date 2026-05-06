@@ -11,7 +11,9 @@ export const partners: Partner[] = [
 
   // Premium Partners
   { id: 'nebulus', name: 'NEBULUS', logoUrl: '/images/partners/nebulus.png', websiteUrl: 'https://nebulus.world', tier: 'premium' },
-  { id: 'pharos', name: 'Pharos', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://pharosnetwork.xyz', tier: 'premium' },
+  { id: 'pharos', name: 'Pharos Network', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://www.pharos.xyz', tier: 'premium' },
+  { id: 'aquavance', name: 'Aquavance', logoUrl: '/images/partners/aquavance.svg', websiteUrl: 'https://aquavance.agency', tier: 'premium' },
+  { id: 'risemount', name: 'Risemount', logoUrl: '/images/partners/risemount.svg', websiteUrl: 'https://risemountresortdanang.com', tier: 'premium' },
 
   // Ecosystem Partners
   { id: 'swiss-ep', name: 'Swiss EP', logoUrl: '/images/partners/SwissEP.png', websiteUrl: 'https://swissep.org/countries/vietnam', tier: 'ecosystem' },
@@ -27,9 +29,9 @@ export const partners: Partner[] = [
   { id: 'spores', name: 'Spores Network', logoUrl: '/images/partners/spores.png', websiteUrl: 'https://spores.app', tier: 'community' },
   { id: 'danang-blockchain-hub', name: 'Da Nang Blockchain Hub', logoUrl: '/images/partners/danang-blockchain-hub.svg', websiteUrl: 'https://www.danangblockchainhub.com', tier: 'community' },
   { id: 'bigcoin', name: 'BigCoin', logoUrl: '/images/partners/bigcoin.png', websiteUrl: 'https://bigcoin.vn', tier: 'community' },
-  { id: 'followin', name: 'Followin', logoUrl: '/images/partners/followin.png', websiteUrl: 'https://followin.io', tier: 'community' },
+  { id: 'dnes', name: 'DNES', logoUrl: '/images/partners/dnes.png', websiteUrl: 'https://dnes.vn', tier: 'community' },
   { id: 'hyperbuilder', name: 'HyperBuilder', logoUrl: '/images/partners/hyperbuilder.png', websiteUrl: 'https://www.hyperbuilder.co', tier: 'community' },
-  { id: 'sea-blockchain-week', name: 'SEA Blockchain Week', logoUrl: '/images/partners/sea-blockchain-week.png', websiteUrl: 'https://www.seablockchainweek.org', tier: 'community' },
+  { id: 'w3dn', name: 'W3DN', logoUrl: '/images/partners/W3DN.png', websiteUrl: 'https://x.com/W3BDN', tier: 'community' },
   { id: 'taipei-blockchain-week', name: 'Taipei Blockchain Week', logoUrl: '/images/partners/taipei-blockchain-week.png', websiteUrl: 'https://www.taipeiblockchainweek.com', tier: 'community' },
   { id: 'xomnft', name: 'XomNFT', logoUrl: '/images/partners/XomNFT.png', websiteUrl: 'https://x.com/xomnft_', tier: 'community' },
   { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },

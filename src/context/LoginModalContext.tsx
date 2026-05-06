@@ -8,7 +8,7 @@ export type PendingAction = { type: 'vote'; debateId: string; stance: DebateStan
 interface LoginModalContextValue {
   isOpen: boolean;
   pendingAction: PendingAction | null;
-  openLoginModal: (action: PendingAction) => void;
+  openLoginModal: (action?: PendingAction) => void;
   closeLoginModal: () => void;
 }
 
@@ -23,8 +23,8 @@ export function LoginModalProvider({ children }: { children: React.ReactNode }) 
   const [isOpen, setIsOpen] = useState(false);
   const [pendingAction, setPendingAction] = useState<PendingAction | null>(null);
 
-  const openLoginModal = useCallback((action: PendingAction) => {
-    setPendingAction(action);
+  const openLoginModal = useCallback((action?: PendingAction) => {
+    setPendingAction(action ?? null);
     setIsOpen(true);
   }, []);
 

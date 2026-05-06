@@ -168,6 +168,21 @@ export const speakers: Speaker[] = [
     },
     sessionIds: [],
   },
+  {
+    id: 'daria-chernozub',
+    name: 'Daria "Dasha" Chernozub',
+    title: 'SEA Lead',
+    company: 'Dash',
+    bio: "Dasha is a Dash contributor focused on business development, marketing, and developer relations. She is building Dash's presence across Web3, connecting partners, developers, and communities to the ecosystem.",
+    photoUrl: '/images/speakers/daria.jpg',
+    socials: {
+      twitter: 'https://x.com/dariachernozub',
+      linkedin: 'https://www.linkedin.com/in/daria-chernozub-33a34b57',
+      telegram: 'https://t.me/chernozubdb',
+      facebook: 'https://www.facebook.com/dasha.chernozub',
+    },
+    sessionIds: [],
+  },
 ];
 
 export function getSpeakerById(id: string): Speaker | undefined {

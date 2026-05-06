@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import DogEarCard from '@/components/ui/DogEarCard';
 import Badge from '@/components/ui/Badge';
 import VoteBar from './VoteBar';
+import ReactionBar from '@/components/reactions/ReactionBar';
 import { DebateSession, Session, DebateStance } from '@/types';
 import { formatTime } from '@/lib/utils';
 import { useDebateVote } from '@/hooks/useDebateVote';
@@ -121,6 +122,11 @@ export default function DebateCard({ debate, session }: DebateCardProps) {
           {totalVotes > 0 && <VoteBar bullPercent={bullPercent} totalVotes={totalVotes} />}
         </div>
       )}
+
+      {/* Live emoji reactions (Google Meet style) */}
+      <div className="mt-5">
+        <ReactionBar sessionId={session.id} format="panel" />
+      </div>
     </DogEarCard>
   );
 }
