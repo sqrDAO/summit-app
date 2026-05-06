@@ -14,7 +14,7 @@ export const partners: Partner[] = [
   { id: 'pharos', name: 'Pharos Network', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://www.pharos.xyz', tier: 'premium' },
   { id: 'aquavance', name: 'Aquavance', logoUrl: '/images/partners/aquavance.svg', websiteUrl: 'https://aquavance.com.vn/', tier: 'premium' },
   { id: 'vici-foundation', name: 'VICI Foundation', logoUrl: '/images/partners/VICI.svg', websiteUrl: 'https://www.facebook.com/vicifoundation/', tier: 'premium' },
-  { id: 'risemount', name: 'Risemount', logoUrl: '/images/partners/risemount.svg', websiteUrl: 'https://risemountresortdanang.com', tier: 'premium', logoScale: 1.3 },
+  { id: 'risemount', name: 'Risemount', logoUrl: '/images/partners/risemount.svg', websiteUrl: 'https://risemountresortdanang.com', tier: 'premium', logoScale: 1.6 },
 
   // Ecosystem Partners
   { id: 'swiss-ep', name: 'Swiss EP', logoUrl: '/images/partners/SwissEP.png', websiteUrl: 'https://swissep.org/countries/vietnam', tier: 'ecosystem' },
