@@ -13,6 +13,7 @@ export const partners: Partner[] = [
   { id: 'nebulus', name: 'NEBULUS', logoUrl: '/images/partners/nebulus.png', websiteUrl: 'https://nebulus.world', tier: 'premium', logoScale: 1.3 },
   { id: 'pharos', name: 'Pharos Network', logoUrl: '/images/partners/pharos.svg', websiteUrl: 'https://www.pharos.xyz', tier: 'premium' },
   { id: 'aquavance', name: 'Aquavance', logoUrl: '/images/partners/aquavance.svg', websiteUrl: 'https://aquavance.com.vn/', tier: 'premium' },
+  { id: 'sky-mavis', name: 'Sky Mavis', logoUrl: '/images/partners/sky-mavis.png', websiteUrl: 'https://skymavis.com', tier: 'premium' },
   { id: 'vici-foundation', name: 'VICI Foundation', logoUrl: '/images/partners/VICI.svg', websiteUrl: 'https://www.facebook.com/vicifoundation/', tier: 'premium' },
   { id: 'risemount', name: 'Risemount', logoUrl: '/images/partners/risemount.svg', websiteUrl: 'https://risemountresortdanang.com', tier: 'premium', logoScale: 1.6 },
 
@@ -45,6 +46,8 @@ export const partners: Partner[] = [
   { id: 'conviction', name: 'Conviction', logoUrl: '/images/partners/conviction.png', websiteUrl: 'https://www.conviction.vn', tier: 'community' },
   { id: 'coin68', name: 'Coin68', logoUrl: '/images/partners/Coin68.svg', websiteUrl: 'https://coin68.com', tier: 'community' },
   { id: 'techflow', name: 'TechFlow', logoUrl: '/images/partners/techflow.png', websiteUrl: 'https://www.techflowpost.com', tier: 'community' },
+  { id: 'followin', name: 'Followin', logoUrl: '/images/partners/followin.png', websiteUrl: 'https://followin.io', tier: 'community' },
+  { id: 'sea-blockchain-week', name: 'SEA Blockchain Week', logoUrl: '/images/partners/sea-blockchain-week.png', websiteUrl: 'https://www.seablockchainweek.org', tier: 'community' },
 ];
 
 export function getPartnersByTier(tier: Partner['tier']): Partner[] {
