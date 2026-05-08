@@ -80,15 +80,15 @@ export const sessions: Session[] = [
   },
   {
     id: 'debate-1',
-    title: 'Lightning Debate 1: Settlement Finality',
-    description: 'Can decentralized protocols reliably automate national-scale financial settlement and mitigate the risks of autonomous AI agents by 2030?',
+    title: 'Lightning Debate 1: Stablecoin v. Incumbent Banking',
+    description: 'Motion: "Stablecoins flip SWIFT in SEA cross-border B2B settlement volume by 2030."',
     date: '2026-05-25',
     startTime: '11:00',
     endTime: '11:15',
     phase: 'morning',
     type: 'debate',
     speakerIds: [],
-    tags: ['debate', 'defi', 'ai', 'settlement'],
+    tags: ['debate', 'stablecoins', 'banking', 'settlement'],
     debateId: 'debate-1',
   },
   {
@@ -102,6 +102,18 @@ export const sessions: Session[] = [
     type: 'panel',
     speakerIds: [],
     tags: ['rwa', 'tokenization', 'infrastructure', 'defi'],
+  },
+  {
+    id: 'morning-wrapup',
+    title: 'Morning Wrap-up',
+    description: 'Brief closing remarks and transition to the lunch break.',
+    date: '2026-05-25',
+    startTime: '11:55',
+    endTime: '12:00',
+    phase: 'morning',
+    type: 'break',
+    speakerIds: [],
+    tags: ['wrap-up', 'break'],
   },
 
   // ── AFTERNOON ────────────────────────────────────────────
@@ -181,7 +193,7 @@ export const sessions: Session[] = [
   {
     id: 'debate-3',
     title: 'Lightning Debate 3: AI × Web3 Security',
-    description: 'Is AI making Web3 protocols more or less secure?',
+    description: 'Motion: "AI defenders outpace AI attackers in Web3 through 2028."',
     date: '2026-05-25',
     startTime: '15:40',
     endTime: '15:55',
@@ -220,15 +232,15 @@ export const sessions: Session[] = [
   // ── EVENING ──────────────────────────────────────────────
   {
     id: 'builders-dinner',
-    title: 'Web3 Builders\' Dinner',
-    description: 'An exclusive evening celebration featuring Vietnamese Web3 Art & NFT Showcase, "The Infinite Block" collaborative physical mural installation, Founders\' Roundtable Salons for industry-specific networking, and Storytelling Circles: "Lessons from the Sandbox".',
+    title: 'Web3 Builders\' Dinner: Welcome to DAVAS',
+    description: 'An exclusive evening celebration (17:00–21:00) featuring co-host introductions, a fireside chat over dinner, Vietnamese Web3 Art & NFT Showcase, and a tentative group game to close the night.',
     date: '2026-05-25',
-    startTime: '18:00',
+    startTime: '17:00',
     endTime: '21:00',
     phase: 'evening',
     type: 'dinner',
     speakerIds: [],
-    tags: ['dinner', 'nft', 'art', 'networking', 'founders'],
+    tags: ['dinner', 'nft', 'art', 'networking', 'fireside'],
   },
 
   // ── MAY 25 — DAVAS GOLF & PRE-DAVAS (alongside Summit) ───
