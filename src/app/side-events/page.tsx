@@ -7,7 +7,9 @@ export const dynamic = 'force-dynamic';
 
 function getUpcomingEvents() {
   const now = new Date();
+  const HIDDEN_IDS = new Set(['davas-2026']);
   return sideEvents.filter((event) => {
+    if (HIDDEN_IDS.has(event.id)) return false;
     const timeStr = event.endTime ?? event.startTime;
     const [hours, minutes] = timeStr.split(':').map(Number);
     const eventEnd = new Date(event.date);
