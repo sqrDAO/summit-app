@@ -91,6 +91,7 @@ export interface Partner {
   websiteUrl: string;
   tier: SponsorTier;
   logoScale?: number;
+  logoFilter?: string;
 }
 
 export interface PanelQuestion {
