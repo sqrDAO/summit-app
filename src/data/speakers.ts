@@ -202,7 +202,7 @@ export const speakers: Speaker[] = [
     title: 'Head of Research',
     company: 'Ronin',
     bio: 'Phuc Thai is Head of Research at Ronin, the EVM blockchain purpose-built for gaming and pioneered by Sky Mavis. He leads research into the Ronin ecosystem, onchain gaming economics, and Web3 infrastructure.',
-    photoUrl: '/images/speakers/phucthai.png',
+    photoUrl: '/images/speakers/phucthai.jpg',
     socials: {
       twitter: 'https://x.com/phucthai95',
       linkedin: 'https://www.linkedin.com/in/phuc-thai/',
