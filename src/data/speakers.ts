@@ -210,6 +210,30 @@ export const speakers: Speaker[] = [
     sessionIds: [],
   },
   {
+    id: 'janesh-balchandani',
+    name: 'Janesh Balchandani',
+    title: 'Head of DevRel',
+    company: 'Pharos Network',
+    bio: 'Janesh Balchandani is Head of Developer Relations at Pharos Network, driving developer adoption and ecosystem growth for the high-performance EVM-compatible blockchain.',
+    photoUrl: '/images/speakers/janesh.jpeg',
+    socials: {
+      twitter: 'https://x.com/janesh_dani',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'xavier-ow-yeong',
+    name: 'Xavier Ow Yeong',
+    title: 'PayFi Partnership Lead',
+    company: 'Bitget Wallet',
+    bio: "Xavier leads PayFi partnerships at Bitget Wallet. As a founding member of the PayFi team, he has been instrumental in building the infrastructure and partnerships powering Bitget Wallet's crypto-fiat payment products — spanning merchant onboarding, card program launches, and cross-border payment corridors across Southeast Asia, LATAM, and Africa. Xavier previously drove business development for Binance Pay and began his Web3 journey at Triple-A, a regulated crypto payment gateway.",
+    photoUrl: '/images/speakers/xavier.jpg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/xavier-owyeong/',
+    },
+    sessionIds: [],
+  },
+  {
     id: 'tu-nguyen',
     name: 'Tu Nguyen',
     title: 'Team1 Regional Lead, Vietnam',
