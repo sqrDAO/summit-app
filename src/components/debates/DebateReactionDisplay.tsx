@@ -75,14 +75,14 @@ export default function DebateReactionDisplay({ debate }: { debate: DebateSessio
           return (
             <div
               key={r.key}
-              className="relative flex-1 flex flex-col border border-white/10 rounded-sm"
+              className="relative flex-1 flex flex-col border border-white/10 rounded-sm overflow-hidden"
             >
-              {/* Burst floaters — overflow visible so they rise above the card */}
-              <div className="pointer-events-none absolute inset-0 overflow-visible">
+              {/* Burst floaters */}
+              <div className="pointer-events-none absolute inset-0">
                 {bursts.filter((b) => b.key === r.key).map((b) => (
                   <span
                     key={b.id}
-                    className="absolute text-8xl"
+                    className="absolute text-6xl"
                     style={{
                       bottom: '12%',
                       left: `${b.x}%`,
@@ -104,7 +104,7 @@ export default function DebateReactionDisplay({ debate }: { debate: DebateSessio
                 <span
                   key={count}
                   className="font-[family-name:var(--font-anton)] leading-none tabular-nums text-white"
-                  style={{ fontSize: 'clamp(4rem, 10vw, 9rem)', animation: count > 0 ? 'count-pop 0.4s ease-out' : undefined }}
+                  style={{ fontSize: 'clamp(2.5rem, 8vw, 9rem)', animation: count > 0 ? 'count-pop 0.4s ease-out' : undefined }}
                 >
                   {count.toLocaleString()}
                 </span>
