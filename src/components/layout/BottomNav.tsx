@@ -74,6 +74,8 @@ const tabs = [
 export default function BottomNav() {
   const pathname = usePathname();
 
+  if (pathname.endsWith('/display')) return null;
+
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-50 bg-[#0D0D10] border-t border-white/10"
