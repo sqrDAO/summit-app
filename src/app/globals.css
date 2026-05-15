@@ -43,3 +43,17 @@ html { scroll-behavior: smooth; }
   15%  { transform: translate(var(--rx-x, 0px), -20px) scale(1.1); opacity: 1; }
   100% { transform: translate(calc(var(--rx-x, 0px) + var(--rx-drift, 0px)), -220px) scale(1); opacity: 0; }
 }
+
+/* LED display burst — large emoji rises from reaction card */
+@keyframes reaction-burst {
+  0%   { transform: translate(0, 0) scale(0.5); opacity: 0; }
+  12%  { transform: translate(0, -60px) scale(1.4); opacity: 1; }
+  100% { transform: translate(var(--rx-drift, 0px), -520px) scale(1); opacity: 0; }
+}
+
+/* Count pop — brief scale on increment */
+@keyframes count-pop {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
