@@ -107,19 +107,6 @@ export const speakers: Speaker[] = [
     sessionIds: [],
   },
   {
-    id: 'anh-tran',
-    name: 'Anh Tran',
-    title: 'Lead',
-    company: 'Superteam Black',
-    bio: 'Anh Tran leads Superteam Black, the global tier of the Superteam network supporting Solana founders who have raised pre-seed and seed rounds. Based in Ho Chi Minh City, he previously led Solana Superteam Vietnam and the broader SEA region. Anh is a leading figure in the Vietnamese builder ecosystem and an active mentor for hackathon teams across the region.',
-    photoUrl: '/images/speakers/anhtran.jpg',
-    socials: {
-      twitter: 'https://x.com/SaigonButcher',
-    },
-    sessionIds: [],
-    isFeatured: true,
-  },
-  {
     id: 'janesh-balchandani',
     name: 'Janesh Balchandani',
     title: 'Head of DevRel',
