@@ -246,6 +246,18 @@ export const speakers: Speaker[] = [
     sessionIds: [],
   },
   {
+    id: 'vuong-le-hanjay',
+    name: 'Vuong Le (Hanjay)',
+    title: 'Founder',
+    company: 'XomAI',
+    bio: 'Vuong Le, known as Hanjay, is the Founder of XomAI — an AI-native platform building at the intersection of artificial intelligence and decentralized finance.',
+    photoUrl: '/images/speakers/hanjay.jpg',
+    socials: {
+      twitter: 'https://x.com/hanjaycrypto',
+    },
+    sessionIds: ['debate-2'],
+  },
+  {
     id: 'vinh-nguyen',
     name: 'Vinh Nguyen',
     title: 'ex-Tech Lead',

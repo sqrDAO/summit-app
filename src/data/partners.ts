@@ -25,6 +25,7 @@ export const partners: Partner[] = [
   { id: 'merch3', name: 'Merch3', logoUrl: '/images/partners/merch3.png', websiteUrl: 'https://www.merch3.space', tier: 'ecosystem' },
   { id: 'dash', name: 'Dash', logoUrl: '/images/partners/dash.png', websiteUrl: 'https://www.dash.org', tier: 'ecosystem' },
   { id: 'bitget-wallet', name: 'Bitget Wallet', logoUrl: '/images/partners/bitget-wallet.png', websiteUrl: 'https://web3.bitget.com', tier: 'ecosystem' },
+  { id: 'xomai', name: 'XomAI', logoUrl: '/images/partners/xomAI.jpg', websiteUrl: 'https://xom.ai', tier: 'ecosystem' },
 
   // Community Partners
   { id: 'team1', name: 'Team1', logoUrl: '/images/partners/team1.png', websiteUrl: 'https://www.team1.network', tier: 'community' },
