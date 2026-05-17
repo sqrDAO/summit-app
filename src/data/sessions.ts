@@ -138,7 +138,7 @@ export const sessions: Session[] = [
     endTime: '14:05',
     phase: 'afternoon',
     type: 'debate',
-    speakerIds: ['stan-nguyen'],
+    speakerIds: ['stan-nguyen', 'vuong-le-hanjay'],
     tags: ['debate', 'yield', 'defi', 'rwa'],
     debateId: 'debate-2',
   },
