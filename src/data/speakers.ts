@@ -270,6 +270,18 @@ export const speakers: Speaker[] = [
     },
     sessionIds: [],
   },
+  {
+    id: 'hung-nguyen',
+    name: 'Hung Nguyen',
+    title: 'Head of Web3',
+    company: 'NAPA Global',
+    bio: "Hung Nguyen is the Head of Web3 at NAPA Global, one of Vietnam's leading technology companies, driving blockchain and Web3 adoption across NAPA's ecosystem.",
+    photoUrl: '/images/speakers/hung.jpg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/hungkaka',
+    },
+    sessionIds: [],
+  },
 ];
 
 export function getSpeakerById(id: string): Speaker | undefined {
