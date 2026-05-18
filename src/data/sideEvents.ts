@@ -19,6 +19,23 @@ export const sideEvents: SideEvent[] = [
     hosts: ['Quinten G', 'sqrDAO'],
   },
   {
+    id: 'empower-coworking-may19',
+    title: 'EMpower Founders Residency: Open Coworking Hours',
+    date: '2026-05-19',
+    startTime: '10:00',
+    endTime: '14:00',
+    location: 'Ngũ Hành Sơn, Da Nang (address shared with confirmed RSVPs)',
+    description:
+      'The EMpower Founders Residency throws open its villa doors twice a week to the Da Nang founder and builder community. Bring your laptop, find a desk, and ship your week\'s work alongside a cohort of Web3 founders racing toward Demo Day. No agenda. No pitches. Just focused work, good coffee, and the kind of side-conversations that only happen when you\'re sharing a room with people building hard things.',
+    tags: ['Blockchain', 'Web3'],
+    lumaUrl: 'https://lu.ma/ba9rvrvg',
+    coverImage:
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/9e/19ac5f01-cb9a-42fd-a52c-e8b831835880.png',
+    status: 'register',
+    attendeeCount: 0,
+    hosts: ['sqrDAO', 'Lisk SEA'],
+  },
+  {
     id: 'empower-founders-residency-web3-sea-gtm',
     title: 'EMpower Founders Residency: Web3 SEA GTM',
     date: '2026-05-16',
@@ -102,12 +119,46 @@ export const sideEvents: SideEvent[] = [
     hosts: ['Shard Bet', 'sqrDAO'],
   },
   {
+    id: 'empower-coworking-may22',
+    title: 'EMpower Founders Residency: Open Coworking Hours',
+    date: '2026-05-22',
+    startTime: '10:30',
+    endTime: '15:30',
+    location: 'Ngũ Hành Sơn, Da Nang (address shared with confirmed RSVPs)',
+    description:
+      'The EMpower Founders Residency throws open its villa doors twice a week to the Da Nang founder and builder community. Bring your laptop, find a desk, and ship your week\'s work alongside a cohort of Web3 founders racing toward Demo Day. No agenda. No pitches. Just focused work, good coffee, and the kind of side-conversations that only happen when you\'re sharing a room with people building hard things.',
+    tags: ['Blockchain', 'Web3'],
+    lumaUrl: 'https://lu.ma/oo41rajl',
+    coverImage:
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/n6/6c4606dc-f967-4206-ba8e-ab387fb372a6.png',
+    status: 'register',
+    attendeeCount: 0,
+    hosts: ['sqrDAO', 'Lisk SEA'],
+  },
+  {
+    id: 'crypto-football-w3bs-2026',
+    title: 'Crypto Football @W3BS 2026 — Back where it started!!!',
+    date: '2026-05-22',
+    startTime: '16:30',
+    endTime: '17:30',
+    location: 'Hải Châu, Da Nang (address shared with confirmed RSVPs)',
+    description:
+      "Crypto Football returns to Da Nang — the city where the first whistle blew. Over the past year, Crypto Football has traveled across the globe, bringing builders, degens, and founders together on the pitch. For W3BS 2026 we're going back to where it all started. An hour of high-intensity football and networking with the industry's top builders under the Da Nang sunset. Token verification required.",
+    tags: ['Sports', 'Web3'],
+    lumaUrl: 'https://lu.ma/tmtdwi74',
+    coverImage:
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/jy/f526baa0-d9a9-4255-ad6d-15b445011d20.jpg',
+    status: 'register',
+    attendeeCount: 9,
+    hosts: ['Thomas Doan', 'Sal Samani', 'MILYSEC'],
+  },
+  {
     id: 'bitcoin-pizza-day-danang',
     title: 'Global Pizza Party Da Nang',
     date: '2026-05-22',
     startTime: '18:00',
     endTime: '21:00',
-    location: '41 Dương Tử Giang, Ngũ Hành Sơn, Đà Nẵng',
+    location: '32 Đa Phước 5, Đà Nẵng',
     description:
       "Celebrate Bitcoin Pizza Day in Da Nang with PizzaDAO, sqrDAO, ENS, and World Pizza Champions. The annual commemoration of the first real-world Bitcoin transaction — 10,000 BTC for two pizzas on May 22, 2010. Join the local Web3 community for an evening of free pizza, networking, and blockchain culture.",
     tags: ['Social', 'Web3'],
