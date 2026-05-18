@@ -24,7 +24,7 @@ export default function VoteResultsDisplay({ debate, aspect }: Props) {
     : 'min(100vh, calc(100vw * 5 / 9))';
 
   return (
-    <div className="w-screen h-screen bg-black flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
       <div
         style={{
           aspectRatio: ratio,
