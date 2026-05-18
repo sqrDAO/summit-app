@@ -282,6 +282,32 @@ export const speakers: Speaker[] = [
     },
     sessionIds: [],
   },
+  {
+    id: 'christine-erispe',
+    name: 'Christine Erispe',
+    title: 'Founder',
+    company: 'ETH Philippines',
+    bio: 'Christine Erispe is the Founder of ETH Philippines, the leading Ethereum community in the Philippines connecting builders, developers, and ecosystem contributors across Southeast Asia.',
+    photoUrl: '/images/speakers/christine.png',
+    socials: {
+      twitter: 'https://x.com/0xdankiii',
+      linkedin: 'https://www.linkedin.com/in/0xdanki/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'breeanne-yek',
+    name: 'BreeAnne Yek',
+    title: 'Founder',
+    company: 'The Verdant Room',
+    bio: 'BreeAnne Yek is the Founder of The Verdant Room, bringing a unique perspective at the intersection of Web3 and community-driven creative spaces.',
+    photoUrl: '/images/speakers/bree.JPG',
+    socials: {
+      twitter: 'https://x.com/bytesbybree',
+      linkedin: 'https://www.linkedin.com/in/breeyek8/',
+    },
+    sessionIds: [],
+  },
 ];
 
 export function getSpeakerById(id: string): Speaker | undefined {
