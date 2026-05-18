@@ -19,6 +19,9 @@ interface Floater {
 
 let floaterIdCounter = 0;
 
+// Flip to true on event day (May 24) — keep false on main until then
+const reactionsOpen = false;
+
 export default function ReactionBar({ sessionId, format }: ReactionBarProps) {
   const reactions = getReactionsForFormat(format);
   const { recentEvents, sendReaction, clientId } = useSessionReactions(sessionId);
@@ -59,6 +62,7 @@ export default function ReactionBar({ sessionId, format }: ReactionBarProps) {
   }, [recentEvents, clientId]);
 
   function handleTap(key: ReactionKey) {
+    if (!reactionsOpen) return;
     spawnFloater(key);
     sendReaction(key);
   }
@@ -77,9 +81,11 @@ export default function ReactionBar({ sessionId, format }: ReactionBarProps) {
           }}
           onClick={() => handleTap(r.key)}
           aria-label={r.label}
+          disabled={!reactionsOpen}
           className="text-2xl p-2 rounded-full transition-transform duration-150
             hover:scale-125 hover:bg-white/10
-            active:scale-95"
+            active:scale-95
+            disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-transparent"
         >
           {r.emoji}
         </button>
