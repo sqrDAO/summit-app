@@ -158,7 +158,7 @@ export const sideEvents: SideEvent[] = [
     date: '2026-05-22',
     startTime: '18:00',
     endTime: '21:00',
-    location: '32 Đa Phước 5, Đà Nẵng',
+    location: '41 Dương Tử Giang, Ngũ Hành Sơn, Đà Nẵng',
     description:
       "Celebrate Bitcoin Pizza Day in Da Nang with PizzaDAO, sqrDAO, ENS, and World Pizza Champions. The annual commemoration of the first real-world Bitcoin transaction — 10,000 BTC for two pizzas on May 22, 2010. Join the local Web3 community for an evening of free pizza, networking, and blockchain culture.",
     tags: ['Social', 'Web3'],
