@@ -85,7 +85,7 @@ export const speakers: Speaker[] = [
     name: 'Queenie Le',
     title: 'Regional Expansion Lead APAC',
     company: 'Tether',
-    bio: 'Queenie Le is a passionate advocate for financial inclusion and innovation, dedicated to expanding Tether\'s presence across emerging markets, especially in the APAC region. She is committed to fostering partnerships, driving growth, and empowering communities through stablecoin adoption.',
+    bio: "Queenie Le is a passionate advocate for financial inclusion and innovation, dedicated to expanding Tether's presence across emerging markets, especially in the APAC region. She is committed to fostering partnerships, driving growth, and empowering communities through stablecoin adoption.",
     photoUrl: '/images/speakers/queenie.jpg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/quynh218/',
@@ -184,6 +184,30 @@ export const speakers: Speaker[] = [
     sessionIds: [],
   },
   {
+    id: 'nitesh',
+    name: 'Nitesh',
+    title: 'Marketing and Growth Lead',
+    company: 'TopNod',
+    bio: 'Nitesh is the Marketing and Growth Lead at TopNod, driving ecosystem growth and community adoption for the platform.',
+    photoUrl: '/images/speakers/nitesh.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/niteshkasana/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'linh-hoang',
+    name: 'Linh Hoang',
+    title: 'Co-founder & CEO',
+    company: 'cirCO',
+    bio: 'Linh Hoang is the Co-founder & CEO of cirCO, building coworking and community spaces that connect entrepreneurs and innovators across Southeast Asia.',
+    photoUrl: '/images/speakers/linh.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/linhhoangsg/',
+    },
+    sessionIds: [],
+  },
+  {
     id: 'nicole-yap',
     name: 'Nicole Yap',
     title: 'Founder',
@@ -233,6 +257,18 @@ export const speakers: Speaker[] = [
     sessionIds: [],
   },
   {
+    id: 'vuong-le-hanjay',
+    name: 'Vuong Le (Hanjay)',
+    title: 'Founder',
+    company: 'XomAI',
+    bio: 'Vuong Le, known as Hanjay, is the Founder of XomAI — an AI-native platform building at the intersection of artificial intelligence and decentralized finance.',
+    photoUrl: '/images/speakers/hanjay.jpg',
+    socials: {
+      twitter: 'https://x.com/hanjaycrypto',
+    },
+    sessionIds: ['debate-2'],
+  },
+  {
     id: 'harry-bui',
     name: 'Harry Bui',
     title: 'Analyst',
@@ -244,18 +280,6 @@ export const speakers: Speaker[] = [
       linkedin: 'https://www.linkedin.com/in/harrybui31/',
     },
     sessionIds: [],
-  },
-  {
-    id: 'vuong-le-hanjay',
-    name: 'Vuong Le (Hanjay)',
-    title: 'Founder',
-    company: 'XomAI',
-    bio: 'Vuong Le, known as Hanjay, is the Founder of XomAI — an AI-native platform building at the intersection of artificial intelligence and decentralized finance.',
-    photoUrl: '/images/speakers/hanjay.jpg',
-    socials: {
-      twitter: 'https://x.com/hanjaycrypto',
-    },
-    sessionIds: ['debate-2'],
   },
   {
     id: 'vinh-nguyen',
@@ -305,18 +329,6 @@ export const speakers: Speaker[] = [
     socials: {
       twitter: 'https://x.com/bytesbybree',
       linkedin: 'https://www.linkedin.com/in/breeyek8/',
-    },
-    sessionIds: [],
-  },
-  {
-    id: 'nitesh',
-    name: 'Nitesh',
-    title: 'Marketing and Growth Lead',
-    company: 'TopNod',
-    bio: 'Nitesh is the Marketing and Growth Lead at TopNod, driving ecosystem growth and community adoption for the platform.',
-    photoUrl: '/images/speakers/nitesh.jpeg',
-    socials: {
-      linkedin: 'https://www.linkedin.com/in/niteshkasana/',
     },
     sessionIds: [],
   },
