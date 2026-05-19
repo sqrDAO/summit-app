@@ -177,6 +177,11 @@ export const sessions: Session[] = [
     type: 'showcase',
     speakerIds: [],
     tags: ['stablecoins', 'custody', 'infrastructure', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: 'Gaian Network', logo: '/images/showcase/gaian.png' },
+      { name: 'Dash', logo: '/images/showcase/dash.png' },
+      { name: 'Fystack', logo: '/images/showcase/fystack.png' },
+    ],
   },
   {
     id: 'debate-3',
@@ -202,6 +207,12 @@ export const sessions: Session[] = [
     type: 'showcase',
     speakerIds: [],
     tags: ['consumer', 'privacy', 'payroll', 'esim', 'loyalty', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: 'PolyPay', logo: '/images/showcase/polypay.png' },
+      { name: "KOKI'O", logo: '/images/showcase/kokio.png' },
+      { name: 'IRLs', logo: '/images/showcase/IRLs.png' },
+      { name: 'TopNod', logo: '/images/showcase/topnod.png' },
+    ],
   },
   {
     id: 'napa-global',
@@ -226,6 +237,10 @@ export const sessions: Session[] = [
     type: 'showcase',
     speakerIds: [],
     tags: ['ai', 'sovereign', 'creator', 'operating-system', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: 'Jamit', logo: '/images/showcase/jamit.png' },
+      { name: 'Uplift', logo: '/images/showcase/uplift.png' },
+    ],
   },
   {
     id: 'closing-keynote',

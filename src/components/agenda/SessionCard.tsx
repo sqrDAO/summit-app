@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import DogEarCard from '@/components/ui/DogEarCard';
 import Badge from '@/components/ui/Badge';
@@ -43,6 +44,16 @@ export default function SessionCard({ session, compact }: SessionCardProps) {
           <p className={clsx('text-white font-medium leading-snug', compact ? 'text-sm' : 'text-[15px]')}>
             {session.title}
           </p>
+
+          {session.showcaseTeams && session.showcaseTeams.length > 0 && (
+            <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+              {session.showcaseTeams.map((team) => (
+                <div key={team.name} className="relative w-6 h-6 rounded bg-white/5 overflow-hidden flex-shrink-0" title={team.name}>
+                  <Image src={team.logo} alt={team.name} fill sizes="24px" className="object-contain p-0.5" />
+                </div>
+              ))}
+            </div>
+          )}
 
         </div>
 
