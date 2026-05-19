@@ -178,7 +178,7 @@ export const sessions: Session[] = [
     speakerIds: [],
     tags: ['stablecoins', 'custody', 'infrastructure', 'demo', 'builders'],
     showcaseTeams: [
-      { name: 'Gaian Network', logo: '/images/showcase/gaian.png' },
+      { name: 'Gaian Network', logo: '/images/showcase/gaian.svg' },
       { name: 'Dash', logo: '/images/showcase/dash.png' },
       { name: 'Fystack', logo: '/images/showcase/fystack.svg' },
     ],
