@@ -87,20 +87,37 @@ export const sideEvents: SideEvent[] = [
   },
   {
     id: 'team1-vietnam-builders-cup',
-    title: 'Team1 Vietnam Builders Cup',
-    date: '2026-05-30',
+    title: 'Team1 World Cup Connect',
+    date: '2026-05-31',
     startTime: '19:00',
     endTime: '21:30',
     location: 'Sân Bóng Đá PM Sport Tân Bình, Ho Chi Minh City',
     description:
-      'Team1 Vietnam Builders Cup #4 — where Web3 builders compete, connect, and dive deeper into the Avalanche ecosystem. 4 teams battle in knockout format (20-min matches): Semifinals → Third-Place Match → Grand Final. Prize pool: $200. Free drinks for all participants. Organized by Team1 Vietnam.',
+      'With one month to go until FIFA World Cup 2026™, Team1 Vietnam brings Web3 builders together on the pitch. Teams form, compete, and build stronger connections on and off the field — powered by Avalanche. Explore fan experiences and Right-to-Ticket on FIFACollect.',
     tags: ['Sport', 'Web3'],
     lumaUrl: 'https://lu.ma/ufc8anso',
     coverImage:
-      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/ef/18bdc201-44f4-4189-bd03-f421f116884e.png',
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/5s/046febe4-9086-4a04-bf65-b79c7084958d.png',
     status: 'register',
-    attendeeCount: 1,
-    hosts: ['Tu Nguyen'],
+    attendeeCount: 17,
+    hosts: ['Tu Nguyen', 'Team1'],
+  },
+  {
+    id: 'dash-sqrdao-meetup',
+    title: 'Web3 Danang: Builder meet-up Dash x sqrDAO',
+    date: '2026-05-26',
+    startTime: '18:00',
+    endTime: '21:30',
+    location: 'Ngũ Hành Sơn, Da Nang (address shared with confirmed RSVPs)',
+    description:
+      'A curated networking side event to W3BS LFBUIDL 2026, co-hosted by Dash and sqrDAO. Drinks, light snacks, a photographer, short presentations, and curated introductions. Powered by Dash — bringing real-fi payment rails and decentralized data infrastructure to the W3BS builder community. Approval required for entry.',
+    tags: ['Social', 'Web3'],
+    lumaUrl: 'https://lu.ma/sqrdao-gwte',
+    coverImage:
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/99/51be27d9-2cbf-4fb5-80b4-cc7d22b2ad61.png',
+    status: 'register',
+    attendeeCount: 0,
+    hosts: ['Faros Do', 'sqrDAO', 'Daria'],
   },
   {
     id: 'prediction-markets-pickleball-shard',

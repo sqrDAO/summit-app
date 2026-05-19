@@ -74,7 +74,7 @@ const tabs = [
 export default function BottomNav() {
   const pathname = usePathname();
 
-  if (pathname.endsWith('/display')) return null;
+  if (pathname.endsWith('/display') || pathname.endsWith('/vote-display')) return null;
 
   return (
     <nav

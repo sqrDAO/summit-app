@@ -28,7 +28,7 @@ export function useSessionReactions(sessionId: string) {
   const [counts, setCounts] = useState<Counts>({});
   const [recentEvents, setRecentEvents] = useState<ReactionEvent[]>([]);
   const [countsLoading, setCountsLoading] = useState(true);
-  const mountTimeRef = useRef<Date>(new Date());
+  const mountTimeRef = useRef<Date>(new Date(Date.now() - 5000));
   const clientIdRef = useRef<string>('');
 
   if (!clientIdRef.current && typeof window !== 'undefined') {

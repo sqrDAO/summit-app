@@ -15,6 +15,24 @@ service cloud.firestore {
       allow create: if request.auth != null && request.auth.uid == uid;
     }
 
+    // ── Live reactions (emoji reactions for panels & debates) ────
+    // Reactions are fully anonymous — identified only by a browser-generated
+    // clientId (localStorage). Aggregate doc is increment-only; events are
+    // append-only. Both are public so any device can read the live stream.
+    match /reactions/{sessionId} {
+      allow read: if true;
+      allow create, update: if true;
+    }
+    match /reactions/{sessionId}/events/{eventId} {
+      allow read: if true;
+      allow create: if
+        request.resource.data.key is string
+        && request.resource.data.key.size() > 0
+        && request.resource.data.cid is string
+        && request.resource.data.cid.size() > 0;
+      allow update, delete: if false;
+    }
+
     // ── Panel Q&A (new) ───────────────────────────────────────
     // Public read+write — submissions are anonymous and don't require Firebase Auth.
     // A client-generated device UUID (stored in localStorage as `summit_device_id`)

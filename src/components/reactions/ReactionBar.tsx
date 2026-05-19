@@ -19,7 +19,7 @@ interface Floater {
 
 let floaterIdCounter = 0;
 
-// Flip to true on event day (May 24) — keep false on main until then
+// Flip to true on event day (May 25) — keep false on main until then
 const reactionsOpen = false;
 
 export default function ReactionBar({ sessionId, format }: ReactionBarProps) {
