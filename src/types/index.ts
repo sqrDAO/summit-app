@@ -57,6 +57,7 @@ export interface Session {
   tags: string[];
   debateId?: string;
   isFeatured?: boolean;
+  showcaseTeams?: { name: string; logo: string }[];
 }
 
 export interface DebateSession {

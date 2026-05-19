@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import PageWrapper from '@/components/layout/PageWrapper';
 import TopBar from '@/components/layout/TopBar';
 import Badge from '@/components/ui/Badge';
@@ -52,6 +53,31 @@ export default async function SessionPage({ params }: { params: Promise<{ id: st
       <h1 className="font-[family-name:var(--font-anton)] text-white text-2xl leading-snug uppercase mb-4">
         {session.title}
       </h1>
+
+      {/* Showcase team logos */}
+      {session.showcaseTeams && session.showcaseTeams.length > 0 && (
+        <div className="mb-6">
+          <h2 className="font-[family-name:var(--font-anton)] text-white text-lg uppercase mb-3">
+            Featuring
+          </h2>
+          <div className="grid grid-cols-3 gap-3">
+            {session.showcaseTeams.map((team) => (
+              <div key={team.name} className="bg-[#0D0D10] rounded p-3 flex flex-col items-center gap-2">
+                <div className="relative w-full h-12">
+                  <Image
+                    src={team.logo}
+                    alt={team.name}
+                    fill
+                    sizes="120px"
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-white text-xs font-medium text-center leading-tight">{team.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Description */}
       {session.description && (

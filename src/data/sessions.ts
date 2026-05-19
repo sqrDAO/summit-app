@@ -177,6 +177,11 @@ export const sessions: Session[] = [
     type: 'showcase',
     speakerIds: [],
     tags: ['stablecoins', 'custody', 'infrastructure', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: 'Gaian Network', logo: '/images/showcase/gaian.png' },
+      { name: 'Dash', logo: '/images/showcase/dash.png' },
+      { name: 'Fystack', logo: '/images/showcase/fystack.svg' },
+    ],
   },
   {
     id: 'debate-3',
@@ -194,14 +199,19 @@ export const sessions: Session[] = [
   {
     id: 'showcase-2',
     title: 'Showcase Batch 2: Onchain Consumer Apps',
-    description: 'Privacy-first and community-owned applications for emerging markets. Featuring: PolyPay (ZK-based privacy-preserving onchain payroll), KOKI\'O (privacy-first eSIM with biometric auth, no KYC), IRLs (real-world loyalty and engagement platform powered by NFC tap stations and digital stamps).',
+    description: 'Privacy-first and community-owned applications for emerging markets. Featuring: KOKI\'O (privacy-first eSIM with biometric auth, no KYC), IRLs (real-world loyalty and engagement platform powered by NFC tap stations and digital stamps).',
     date: '2026-05-25',
     startTime: '15:15',
     endTime: '15:55',
     phase: 'afternoon',
     type: 'showcase',
     speakerIds: [],
-    tags: ['consumer', 'privacy', 'payroll', 'esim', 'loyalty', 'demo', 'builders'],
+    tags: ['consumer', 'privacy', 'esim', 'loyalty', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: "KOKI'O", logo: '/images/showcase/kokio.png' },
+      { name: 'IRLs', logo: '/images/showcase/IRLs.png' },
+      { name: 'TopNod', logo: '/images/showcase/topnod.png' },
+    ],
   },
   {
     id: 'napa-global',
@@ -226,6 +236,10 @@ export const sessions: Session[] = [
     type: 'showcase',
     speakerIds: [],
     tags: ['ai', 'sovereign', 'creator', 'operating-system', 'demo', 'builders'],
+    showcaseTeams: [
+      { name: 'Jamit', logo: '/images/showcase/jamit.png' },
+      { name: 'Uplift', logo: '/images/showcase/uplift.png' },
+    ],
   },
   {
     id: 'closing-keynote',

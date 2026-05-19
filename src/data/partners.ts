@@ -26,12 +26,14 @@ export const partners: Partner[] = [
   { id: 'dash', name: 'Dash', logoUrl: '/images/partners/dash.png', websiteUrl: 'https://www.dash.org', tier: 'ecosystem' },
   { id: 'bitget-wallet', name: 'Bitget Wallet', logoUrl: '/images/partners/bitget-wallet.png', websiteUrl: 'https://web3.bitget.com', tier: 'ecosystem' },
   { id: 'xomai', name: 'XomAI', logoUrl: '/images/partners/xomAI.jpg', websiteUrl: 'https://xom.ai', tier: 'ecosystem' },
+  { id: 'circo', name: 'cirCO', logoUrl: '/images/partners/circo.png', websiteUrl: 'https://circo.co', tier: 'ecosystem' },
+  { id: 'topnod', name: 'TopNod', logoUrl: '/images/partners/topnod.png', websiteUrl: 'https://topnod.com', tier: 'ecosystem' },
 
   // Community Partners
   { id: 'team1', name: 'Team1', logoUrl: '/images/partners/team1.png', websiteUrl: 'https://www.team1.network', tier: 'community' },
   { id: 'spores', name: 'Spores Network', logoUrl: '/images/partners/spores.png', websiteUrl: 'https://spores.app', tier: 'community' },
   { id: 'danang-blockchain-hub', name: 'Da Nang Blockchain Hub', logoUrl: '/images/partners/danang-blockchain-hub.svg', websiteUrl: 'https://www.danangblockchainhub.com', tier: 'community' },
-  { id: 'bigcoin', name: 'BigCoin', logoUrl: '/images/partners/bigcoin.png', websiteUrl: 'https://bigcoin.vn', tier: 'community' },
+  { id: 'bigcoin', name: 'BigCoin', logoUrl: '/images/partners/bigcoin.png', websiteUrl: 'https://bigcoinvietnam.com', tier: 'community' },
   { id: 'dnes', name: 'DNES', logoUrl: '/images/partners/dnes.png', websiteUrl: 'https://dnes.vn', tier: 'community' },
   { id: 'hyperbuilder', name: 'HyperBuilder', logoUrl: '/images/partners/hyperbuilder.png', websiteUrl: 'https://www.hyperbuilder.co', tier: 'community' },
   { id: 'w3dn', name: 'W3DN', logoUrl: '/images/partners/W3DN.png', websiteUrl: 'https://x.com/W3BDN', tier: 'community' },
