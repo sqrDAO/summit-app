@@ -308,6 +308,18 @@ export const speakers: Speaker[] = [
     },
     sessionIds: [],
   },
+  {
+    id: 'nitesh',
+    name: 'Nitesh',
+    title: 'Marketing and Growth Lead',
+    company: 'TopNod',
+    bio: 'Nitesh is the Marketing and Growth Lead at TopNod, driving ecosystem growth and community adoption for the platform.',
+    photoUrl: '/images/speakers/nitesh.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/niteshkasana/',
+    },
+    sessionIds: [],
+  },
 ];
 
 export function getSpeakerById(id: string): Speaker | undefined {
