@@ -80,11 +80,23 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
   }, [mode, sessionId, debateId, aspect]);
 
   // Selector options + value driven by pending mode
+  // Disambiguate sessions that share the same title by appending the start time
+  function sessionOptions(list: Session[]) {
+    const titleCount = list.reduce<Record<string, number>>((acc, s) => {
+      acc[s.title] = (acc[s.title] ?? 0) + 1;
+      return acc;
+    }, {});
+    return list.map((s) => ({
+      id: s.id,
+      label: titleCount[s.title] > 1 ? `${s.title} (${s.startTime})` : s.title,
+    }));
+  }
+
   const selectorOptions =
     mode === 'session-reactions'
-      ? reactionSessions.map((s) => ({ id: s.id, label: s.title }))
+      ? sessionOptions(reactionSessions)
       : mode === 'session-qa'
-        ? qaSessions.map((s) => ({ id: s.id, label: s.title }))
+        ? sessionOptions(qaSessions)
         : debates.map((d) => ({ id: d.id, label: d.question }));
 
   const selectorValue =
