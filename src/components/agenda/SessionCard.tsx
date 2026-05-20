@@ -40,6 +40,11 @@ export default function SessionCard({ session, compact }: SessionCardProps) {
             <Badge variant={typeBadgeVariant[session.type] ?? 'gray'}>
               {getSessionTypeLabel(session.type)}
             </Badge>
+            {session.tentative && (
+              <span className="text-[10px] font-medium px-1.5 py-0.5 rounded border border-[#A1A1AA]/40 text-[#A1A1AA] uppercase tracking-wide">
+                Tentative
+              </span>
+            )}
           </div>
           <p className={clsx('text-white font-medium leading-snug', compact ? 'text-sm' : 'text-[15px]')}>
             {session.title}

@@ -205,7 +205,7 @@ export const speakers: Speaker[] = [
     socials: {
       linkedin: 'https://www.linkedin.com/in/linhhoangsg/',
     },
-    sessionIds: [],
+    sessionIds: ['dinner-fireside'],
   },
   {
     id: 'nicole-yap',
