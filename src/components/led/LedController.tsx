@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { DebateSession, Session } from '@/types';
 import { getReactionFormat } from '@/lib/reactions';
 import PanelReactionDisplay from '@/components/reactions/PanelReactionDisplay';
@@ -23,39 +23,27 @@ const MODE_LABELS: Record<DisplayMode, string> = {
   'debate-votes': 'Vote Results',
 };
 
+// Append start time when sessions share a title
+function buildSessionOptions(list: Session[]) {
+  const titleCount = list.reduce<Record<string, number>>((acc, s) => {
+    acc[s.title] = (acc[s.title] ?? 0) + 1;
+    return acc;
+  }, {});
+  return list.map((s) => ({
+    id: s.id,
+    label: titleCount[s.title] > 1 ? `${s.title} (${s.startTime})` : s.title,
+  }));
+}
+
 export default function LedController({ reactionSessions, qaSessions, debates }: Props) {
-  // Pending (what operator is configuring)
   const [mode, setMode] = useState<DisplayMode>('debate-votes');
   const [sessionId, setSessionId] = useState(reactionSessions[0]?.id ?? '');
   const [debateId, setDebateId] = useState(debates[0]?.id ?? '');
   const [aspect, setAspect] = useState<'main' | 'side'>('side');
-
-  // Active (what's live on the LED)
-  const [activeMode, setActiveMode] = useState<DisplayMode>('debate-votes');
-  const [activeSessionId, setActiveSessionId] = useState(reactionSessions[0]?.id ?? '');
-  const [activeDebateId, setActiveDebateId] = useState(debates[0]?.id ?? '');
-  const [activeAspect, setActiveAspect] = useState<'main' | 'side'>('side');
-  // Unique key to force remount of the active view when going live
   const [viewKey, setViewKey] = useState(0);
-
-  // Fade overlay controls the black transition between views
   const [fadeOverlay, setFadeOverlay] = useState(0);
-
   const [controlsOpen, setControlsOpen] = useState(true);
-
-  // Reset selector when switching modes to ensure valid selection
-  useEffect(() => {
-    if (mode === 'session-qa') {
-      if (!qaSessions.find((s) => s.id === sessionId) && qaSessions.length > 0) {
-        setSessionId(qaSessions[0].id);
-      }
-    } else if (mode === 'session-reactions') {
-      if (!reactionSessions.find((s) => s.id === sessionId) && reactionSessions.length > 0) {
-        setSessionId(reactionSessions[0].id);
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode]);
+  const transitioning = useRef(false);
 
   // Toggle controls with Escape
   useEffect(() => {
@@ -66,94 +54,106 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const goLive = useCallback(() => {
+  // Black cross-fade, then swap, then fade back in
+  function applySwitch(
+    newMode: DisplayMode,
+    newSessionId: string,
+    newDebateId: string,
+    newAspect: 'main' | 'side',
+  ) {
+    if (transitioning.current) return;
+    transitioning.current = true;
     setFadeOverlay(1);
     setTimeout(() => {
-      setActiveMode(mode);
-      setActiveSessionId(sessionId);
-      setActiveDebateId(debateId);
-      setActiveAspect(aspect);
+      setMode(newMode);
+      setSessionId(newSessionId);
+      setDebateId(newDebateId);
+      setAspect(newAspect);
       setViewKey((k) => k + 1);
       setFadeOverlay(0);
-    }, 300);
-    setControlsOpen(false);
-  }, [mode, sessionId, debateId, aspect]);
-
-  // Selector options + value driven by pending mode
-  // Disambiguate sessions that share the same title by appending the start time
-  function sessionOptions(list: Session[]) {
-    const titleCount = list.reduce<Record<string, number>>((acc, s) => {
-      acc[s.title] = (acc[s.title] ?? 0) + 1;
-      return acc;
-    }, {});
-    return list.map((s) => ({
-      id: s.id,
-      label: titleCount[s.title] > 1 ? `${s.title} (${s.startTime})` : s.title,
-    }));
+      transitioning.current = false;
+    }, 280);
   }
 
+  function handleModeChange(newMode: DisplayMode) {
+    // Pick a valid default ID for the new mode
+    let newSessionId = sessionId;
+    let newDebateId = debateId;
+
+    if (newMode === 'session-qa') {
+      if (!qaSessions.find((s) => s.id === sessionId)) {
+        newSessionId = qaSessions[0]?.id ?? '';
+      }
+    } else if (newMode === 'session-reactions') {
+      if (!reactionSessions.find((s) => s.id === sessionId)) {
+        newSessionId = reactionSessions[0]?.id ?? '';
+      }
+    }
+
+    applySwitch(newMode, newSessionId, newDebateId, aspect);
+  }
+
+  function handleSelectorChange(id: string) {
+    const newSessionId = mode === 'session-reactions' || mode === 'session-qa' ? id : sessionId;
+    const newDebateId = mode === 'debate-reactions' || mode === 'debate-votes' ? id : debateId;
+    applySwitch(mode, newSessionId, newDebateId, aspect);
+  }
+
+  function handleAspectChange(newAspect: 'main' | 'side') {
+    applySwitch(mode, sessionId, debateId, newAspect);
+  }
+
+  // Selector options for the current mode
   const selectorOptions =
     mode === 'session-reactions'
-      ? sessionOptions(reactionSessions)
+      ? buildSessionOptions(reactionSessions)
       : mode === 'session-qa'
-        ? sessionOptions(qaSessions)
+        ? buildSessionOptions(qaSessions)
         : debates.map((d) => ({ id: d.id, label: d.question }));
 
   const selectorValue =
     mode === 'session-reactions' || mode === 'session-qa' ? sessionId : debateId;
 
-  function handleSelectorChange(id: string) {
-    if (mode === 'session-reactions' || mode === 'session-qa') {
-      setSessionId(id);
-    } else {
-      setDebateId(id);
-    }
-  }
-
-  // Status line shown at bottom of control panel
-  const statusSession = [...reactionSessions, ...qaSessions].find(
-    (s) => s.id === activeSessionId,
-  );
-  const statusDebate = debates.find((d) => d.id === activeDebateId);
+  // Status label for the footer
+  const allSessions = [...reactionSessions, ...qaSessions];
   const statusLabel =
-    activeMode === 'session-reactions' || activeMode === 'session-qa'
-      ? statusSession?.title ?? ''
-      : statusDebate?.question ?? '';
+    mode === 'session-reactions' || mode === 'session-qa'
+      ? allSessions.find((s) => s.id === sessionId)?.title ?? ''
+      : debates.find((d) => d.id === debateId)?.question ?? '';
 
-  function renderActiveView() {
-    switch (activeMode) {
+  function renderView() {
+    switch (mode) {
       case 'session-reactions': {
-        const s = reactionSessions.find((s) => s.id === activeSessionId) ?? reactionSessions[0];
+        const s = reactionSessions.find((s) => s.id === sessionId) ?? reactionSessions[0];
         if (!s) return null;
-        const fmt = getReactionFormat(s.type)!;
-        return <PanelReactionDisplay key={viewKey} session={s} format={fmt} />;
+        return <PanelReactionDisplay key={viewKey} session={s} format={getReactionFormat(s.type)!} />;
       }
       case 'session-qa': {
-        const s = qaSessions.find((s) => s.id === activeSessionId) ?? qaSessions[0];
+        const s = qaSessions.find((s) => s.id === sessionId) ?? qaSessions[0];
         if (!s) return null;
         return <PanelQADisplay key={viewKey} session={s} />;
       }
       case 'debate-reactions': {
-        const d = debates.find((d) => d.id === activeDebateId) ?? debates[0];
+        const d = debates.find((d) => d.id === debateId) ?? debates[0];
         if (!d) return null;
         return <DebateReactionDisplay key={viewKey} debate={d} />;
       }
       case 'debate-votes': {
-        const d = debates.find((d) => d.id === activeDebateId) ?? debates[0];
+        const d = debates.find((d) => d.id === debateId) ?? debates[0];
         if (!d) return null;
-        return <VoteResultsDisplay key={viewKey} debate={d} aspect={activeAspect} />;
+        return <VoteResultsDisplay key={viewKey} debate={d} aspect={aspect} />;
       }
     }
   }
 
   return (
     <>
-      {renderActiveView()}
+      {renderView()}
 
       {/* Black cross-fade overlay */}
       <div
         className="fixed inset-0 pointer-events-none bg-black z-[55]"
-        style={{ opacity: fadeOverlay, transition: 'opacity 0.3s ease-in-out' }}
+        style={{ opacity: fadeOverlay, transition: 'opacity 0.28s ease-in-out' }}
       />
 
       {/* Toggle button — always visible, bottom-right */}
@@ -176,7 +176,7 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
             {(Object.keys(MODE_LABELS) as DisplayMode[]).map((m) => (
               <button
                 key={m}
-                onClick={() => setMode(m)}
+                onClick={() => handleModeChange(m)}
                 className={`px-3 py-1.5 rounded-sm text-[11px] font-bold uppercase tracking-wider transition-colors ${
                   mode === m
                     ? 'bg-[#FFB800] text-black'
@@ -192,7 +192,7 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
           <select
             value={selectorValue}
             onChange={(e) => handleSelectorChange(e.target.value)}
-            className="flex-1 min-w-0 max-w-sm bg-white/5 border border-white/20 text-white text-[11px] rounded-sm px-2 py-1.5 focus:outline-none focus:border-[#FFB800] truncate"
+            className="flex-1 min-w-0 max-w-sm bg-white/5 border border-white/20 text-white text-[11px] rounded-sm px-2 py-1.5 focus:outline-none focus:border-[#FFB800]"
           >
             {selectorOptions.map((opt) => (
               <option key={opt.id} value={opt.id} className="bg-black text-white">
@@ -201,13 +201,13 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
             ))}
           </select>
 
-          {/* Aspect ratio — only relevant for vote-results */}
+          {/* Aspect ratio — only for vote results */}
           {mode === 'debate-votes' && (
             <div className="flex gap-1">
               {(['side', 'main'] as const).map((a) => (
                 <button
                   key={a}
-                  onClick={() => setAspect(a)}
+                  onClick={() => handleAspectChange(a)}
                   className={`px-3 py-1.5 rounded-sm text-[11px] font-bold uppercase tracking-wider transition-colors ${
                     aspect === a
                       ? 'bg-[#FFB800] text-black'
@@ -219,31 +219,23 @@ export default function LedController({ reactionSessions, qaSessions, debates }:
               ))}
             </div>
           )}
-
-          {/* Go Live */}
-          <button
-            onClick={goLive}
-            className="px-5 py-1.5 bg-[#FFB800] text-black text-[11px] font-bold uppercase tracking-wider rounded-sm hover:bg-yellow-300 active:scale-95 transition-all"
-          >
-            Go Live ▶
-          </button>
         </div>
 
         {/* Status line */}
         <div className="px-5 pb-3 flex items-center gap-3 text-[10px] font-mono text-white/30">
           <span>ESC to toggle</span>
           <span className="text-white/10">·</span>
-          <span className="text-[#FFB800]/60">LIVE: {MODE_LABELS[activeMode]}</span>
+          <span className="text-[#FFB800]/60">{MODE_LABELS[mode]}</span>
           {statusLabel && (
             <>
               <span className="text-white/10">·</span>
               <span className="truncate max-w-xs">{statusLabel}</span>
             </>
           )}
-          {activeMode === 'debate-votes' && (
+          {mode === 'debate-votes' && (
             <>
               <span className="text-white/10">·</span>
-              <span>{activeAspect === 'main' ? '10∶3 Main' : '9∶5 Side Wings'}</span>
+              <span>{aspect === 'main' ? '10∶3 Main' : '9∶5 Side Wings'}</span>
             </>
           )}
         </div>
