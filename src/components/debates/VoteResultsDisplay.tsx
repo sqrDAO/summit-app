@@ -152,76 +152,75 @@ function MainLayout({ debate, bullPercent, bearPercent, totalVotes, loading }: L
   );
 }
 
-// 9:5 — single column: question → percentages → bar → total
+// 9:5 — horizontal split: left = question/label, right = percentages + bar
 function SideLayout({ debate, bullPercent, bearPercent, totalVotes, loading }: LayoutProps) {
   return (
-    <div className="w-full h-full flex flex-col px-[4vw] py-[3vh] justify-between">
-      {/* Header */}
-      <div>
+    <div className="w-full h-full flex gap-[3vw] px-[3vw] py-[2.5vh] items-center">
+      {/* Left: label + question */}
+      <div className="w-[44%] flex-shrink-0 flex flex-col justify-center gap-[1.2vh]">
         <p
-          className="text-[#FFB800] font-bold uppercase tracking-[0.3em] mb-[1vh]"
-          style={{ fontSize: 'clamp(0.5rem, 1.4vw, 1rem)' }}
+          className="text-[#FFB800] font-bold uppercase tracking-[0.3em]"
+          style={{ fontSize: 'clamp(0.5rem, 1.3vw, 1rem)' }}
         >
           Lightning Debate · Voting Results
         </p>
         <h1
-          className="font-[family-name:var(--font-anton)] uppercase leading-tight line-clamp-3"
-          style={{ fontSize: 'clamp(1rem, 3vw, 2.5rem)' }}
+          className="font-[family-name:var(--font-anton)] uppercase leading-tight"
+          style={{ fontSize: 'clamp(1rem, 2.8vw, 3rem)' }}
         >
           {debate.question}
         </h1>
       </div>
 
-      {/* Big percentages */}
-      <div className="flex justify-between items-center px-[2vw]">
-        <div className="flex flex-col items-center gap-[0.5vh]">
-          <span
-            key={`bull-${bullPercent}`}
-            className="font-[family-name:var(--font-anton)] text-emerald-400 tabular-nums leading-none"
-            style={{
-              fontSize: 'clamp(2.5rem, 9vw, 8rem)',
-              animation: loading ? undefined : 'count-pop 0.4s ease-out',
-            }}
-          >
-            {loading ? '—' : `${bullPercent}%`}
-          </span>
-          <span
-            className="text-emerald-400 font-bold uppercase tracking-wider"
-            style={{ fontSize: 'clamp(0.55rem, 1.5vw, 1.1rem)' }}
-          >
-            🐂 Bull
-          </span>
+      {/* Divider */}
+      <div className="w-px self-stretch bg-white/10 flex-shrink-0" />
+
+      {/* Right: big numbers + bar + totals */}
+      <div className="flex-1 flex flex-col justify-center gap-[1.8vh]">
+        {/* Percentages side-by-side */}
+        <div className="flex justify-around items-end">
+          <div className="flex flex-col items-center gap-[0.4vh]">
+            <span
+              key={`bull-${bullPercent}`}
+              className="font-[family-name:var(--font-anton)] text-emerald-400 tabular-nums leading-none"
+              style={{
+                fontSize: 'clamp(2rem, 8vw, 7rem)',
+                animation: loading ? undefined : 'count-pop 0.4s ease-out',
+              }}
+            >
+              {loading ? '—' : `${bullPercent}%`}
+            </span>
+            <span
+              className="text-emerald-400 font-bold uppercase tracking-wider"
+              style={{ fontSize: 'clamp(0.5rem, 1.2vw, 1rem)' }}
+            >
+              🐂 Bull
+            </span>
+          </div>
+          <div className="flex flex-col items-center gap-[0.4vh]">
+            <span
+              key={`bear-${bearPercent}`}
+              className="font-[family-name:var(--font-anton)] text-red-400 tabular-nums leading-none"
+              style={{
+                fontSize: 'clamp(2rem, 8vw, 7rem)',
+                animation: loading ? undefined : 'count-pop 0.4s ease-out',
+              }}
+            >
+              {loading ? '—' : `${bearPercent}%`}
+            </span>
+            <span
+              className="text-red-400 font-bold uppercase tracking-wider"
+              style={{ fontSize: 'clamp(0.5rem, 1.2vw, 1rem)' }}
+            >
+              Bear 🐻
+            </span>
+          </div>
         </div>
 
+        {/* Vote bar */}
         <div
-          className="w-px self-stretch bg-white/10"
-        />
-
-        <div className="flex flex-col items-center gap-[0.5vh]">
-          <span
-            key={`bear-${bearPercent}`}
-            className="font-[family-name:var(--font-anton)] text-red-400 tabular-nums leading-none"
-            style={{
-              fontSize: 'clamp(2.5rem, 9vw, 8rem)',
-              animation: loading ? undefined : 'count-pop 0.4s ease-out',
-            }}
-          >
-            {loading ? '—' : `${bearPercent}%`}
-          </span>
-          <span
-            className="text-red-400 font-bold uppercase tracking-wider"
-            style={{ fontSize: 'clamp(0.55rem, 1.5vw, 1.1rem)' }}
-          >
-            Bear 🐻
-          </span>
-        </div>
-      </div>
-
-      {/* Vote bar + footer */}
-      <div>
-        <div
-          className="w-full rounded-full overflow-hidden bg-white/10 flex mb-[1.5vh]"
-          style={{ height: 'clamp(8px, 1.8vh, 20px)' }}
+          className="w-full rounded-full overflow-hidden bg-white/10 flex"
+          style={{ height: 'clamp(6px, 1.5vh, 16px)' }}
         >
           <div
             className="h-full bg-emerald-500 transition-all duration-700 ease-out"
@@ -233,16 +232,17 @@ function SideLayout({ debate, bullPercent, bearPercent, totalVotes, loading }: L
           />
         </div>
 
+        {/* Footer */}
         <div className="flex items-center justify-between">
           <p
             className="text-[#A1A1AA] tabular-nums"
-            style={{ fontSize: 'clamp(0.5rem, 1.2vw, 0.9rem)' }}
+            style={{ fontSize: 'clamp(0.4rem, 1vw, 0.9rem)' }}
           >
             {loading ? '—' : `${totalVotes.toLocaleString()} vote${totalVotes !== 1 ? 's' : ''}`}
           </p>
           <p
             className="font-[family-name:var(--font-anton)] uppercase tracking-widest text-[#FFB800]"
-            style={{ fontSize: 'clamp(0.4rem, 1vw, 0.8rem)' }}
+            style={{ fontSize: 'clamp(0.4rem, 0.9vw, 0.8rem)' }}
           >
             LFBUIDL 2026
           </p>
