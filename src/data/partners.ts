@@ -37,7 +37,7 @@ export const partners: Partner[] = [
   { id: 'dnes', name: 'DNES', logoUrl: '/images/partners/dnes.png', websiteUrl: 'https://dnes.vn', tier: 'community' },
   { id: 'hyperbuilder', name: 'HyperBuilder', logoUrl: '/images/partners/hyperbuilder.png', websiteUrl: 'https://www.hyperbuilder.co', tier: 'community' },
   { id: 'w3dn', name: 'W3DN', logoUrl: '/images/partners/W3DN.png', websiteUrl: 'https://x.com/W3BDN', tier: 'community' },
-  { id: 'taipei-blockchain-week', name: 'Taipei Blockchain Week', logoUrl: '/images/partners/taipei-blockchain-week.png', websiteUrl: 'https://www.taipeiblockchainweek.com', tier: 'community' },
+  { id: 'futuremode', name: 'FutureMode', logoUrl: '/images/partners/futuremode.png', websiteUrl: 'https://www.futuremode.xyz', tier: 'community' },
   { id: 'xomnft', name: 'XomNFT', logoUrl: '/images/partners/XomNFT.png', websiteUrl: 'https://x.com/xomnft_', tier: 'community' },
   { id: '8sian-magazine', name: '8sian Magazine', logoUrl: '/images/partners/8sian-magazine.png', websiteUrl: 'https://8sian.io', tier: 'community' },
   { id: 'cryptopolitan', name: 'Cryptopolitan', logoUrl: '/images/partners/cryptopolitan.png', websiteUrl: 'https://www.cryptopolitan.com', tier: 'community' },
