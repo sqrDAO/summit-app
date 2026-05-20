@@ -144,7 +144,7 @@ export const sessions: Session[] = [
   },
   {
     id: 'stage-refresh',
-    title: 'Stage Refresh for Showcases',
+    title: 'Stage Refreshing for Showcases',
     description: 'Brief technical break to reset the stage for showcase presentations.',
     date: '2026-05-25',
     startTime: '14:05',
@@ -289,13 +289,13 @@ export const sessions: Session[] = [
     endTime: '20:00',
     phase: 'evening',
     type: 'dinner',
-    speakerIds: [],
+    speakerIds: ['linh-hoang'],
     tags: ['dinner', 'fireside', 'nft', 'art'],
   },
   {
     id: 'dinner-game',
     title: 'Game',
-    description: 'Tentative group game activity for dinner guests.',
+    description: 'Group game activity for dinner guests.',
     date: '2026-05-25',
     startTime: '20:00',
     endTime: '20:45',
@@ -303,7 +303,7 @@ export const sessions: Session[] = [
     type: 'networking',
     speakerIds: [],
     tags: ['dinner', 'game', 'networking'],
-    isFeatured: false,
+    tentative: true,
   },
   {
     id: 'dinner-closing',

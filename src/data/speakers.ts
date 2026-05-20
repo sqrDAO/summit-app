@@ -2,6 +2,19 @@ import { Speaker } from '@/types';
 
 export const speakers: Speaker[] = [
   {
+    id: 'oscar-njuguna',
+    name: 'Oscar Njuguna',
+    title: 'Director of Membership',
+    company: 'VIFC-DN Executive Agency',
+    bio: 'Oscar Njuguna is the Director of Membership at the Vietnam International Finance Centre – Da Nang (VIFC-DN) Executive Agency, supporting the development of Da Nang as a leading financial and innovation hub in Southeast Asia.',
+    photoUrl: '/images/speakers/oscar.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/oscar-njuguna-1b989523/',
+    },
+    sessionIds: [],
+    isFeatured: true,
+  },
+  {
     id: 'long-leo-pham',
     name: "Long 'Leo' Pham",
     title: 'Founder',
@@ -205,7 +218,7 @@ export const speakers: Speaker[] = [
     socials: {
       linkedin: 'https://www.linkedin.com/in/linhhoangsg/',
     },
-    sessionIds: [],
+    sessionIds: ['dinner-fireside'],
   },
   {
     id: 'nicole-yap',
@@ -329,6 +342,116 @@ export const speakers: Speaker[] = [
     socials: {
       twitter: 'https://x.com/bytesbybree',
       linkedin: 'https://www.linkedin.com/in/breeyek8/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'jonathan-button',
+    name: 'Jonathan Button',
+    title: 'Co-Founder',
+    company: 'IRLs.xyz',
+    bio: 'Jonathan Button is the Co-Founder of IRLs.xyz, building onchain infrastructure for real-world events and community experiences.',
+    photoUrl: '/images/speakers/jon.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/jonathonbutton/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'quinn-button',
+    name: 'Quinn Button, PhD',
+    title: 'Co-Founder',
+    company: 'IRLs.xyz',
+    bio: 'Quinn Button, PhD is the Co-Founder of IRLs.xyz, bringing academic rigor and technical depth to onchain event infrastructure and real-world community experiences.',
+    photoUrl: '/images/speakers/quinn.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/qbuttonphd/',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'fay-nguyen',
+    name: 'Fay Nguyen',
+    title: 'Founder',
+    company: 'Gaian Network',
+    bio: 'Fay Nguyen is a Founder of Gaian Network, building decentralized infrastructure at the intersection of sustainability and Web3.',
+    photoUrl: '/images/speakers/Fay.png',
+    socials: {
+      twitter: 'https://x.com/faynguyen071',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'kelvin-truong',
+    name: 'Kelvin Truong',
+    title: 'Founder',
+    company: 'Gaian Network',
+    bio: 'Kelvin Truong is a Founder of Gaian Network, driving decentralized infrastructure and ecosystem growth.',
+    photoUrl: '/images/speakers/kelvin-truong.jpeg',
+    socials: {
+      twitter: 'https://x.com/KhaTruong8',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'matt-sim',
+    name: 'Matt Sim',
+    title: 'Founder',
+    company: 'Uplift',
+    bio: 'Matt Sim is the Founder of Uplift, building tools and experiences to elevate Web3 communities and builders.',
+    photoUrl: '/images/speakers/matt.jpg',
+    socials: {
+      twitter: 'https://x.com/rvaclassic',
+      linkedin: 'https://www.linkedin.com/in/rvaclassic',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'gian-alarcon',
+    name: 'Gian Alarcon',
+    title: 'Founder',
+    company: 'PolyPay',
+    bio: 'Gian Alarcon is the Founder of PolyPay, building crypto payment infrastructure that bridges digital assets and real-world commerce.',
+    photoUrl: '/images/speakers/gian.png',
+    socials: {
+      twitter: 'https://x.com/gianmalarcon',
+      linkedin: 'https://www.linkedin.com/in/gianalarcon',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'ike-orizu',
+    name: 'Ike Orizu',
+    title: 'Founder',
+    company: 'Jamit',
+    bio: 'Ike Orizu is the Founder of Jamit, building the next generation of audio and podcast infrastructure for Web3 communities.',
+    photoUrl: '/images/speakers/ike-orizu.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/ikeorizu',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'thi-nguyen',
+    name: 'Thi Nguyen',
+    title: 'Founder',
+    company: 'Fystack',
+    bio: 'Thi Nguyen is the Founder of Fystack, building developer tooling and infrastructure for the next generation of Web3 applications.',
+    photoUrl: '/images/speakers/thi.jpg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/thi-nguyen-559684210',
+    },
+    sessionIds: [],
+  },
+  {
+    id: 'arpit-kumar',
+    name: 'Arpit Kumar',
+    title: 'Founder',
+    company: "KOKI'O",
+    bio: "Arpit Kumar is the Founder of KOKI'O, building innovative Web3 products at the intersection of community and decentralized finance.",
+    photoUrl: '/images/speakers/arpit.jpeg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/arpit-kumar-6a1a751bb',
     },
     sessionIds: [],
   },
